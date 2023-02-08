@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col } from 'reactstrap';
 import heroImage from '../assets/images/hero_image.svg';
 import mattHomepage from '../assets/images/mattHomepage.png';
+import swirl from '../assets/images/mattHomepage_swirl.png';
 import { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import bg01 from '../assets/images/backgrounds/bg01.jpg';
@@ -89,6 +90,17 @@ const HomePage = () => {
         }
     };
 
+    // SELECT ELEMENT BY ID //
+    const profilePhoto = React.useRef(null);
+    
+    function getID() {
+        const element = profilePhoto.current.style;
+        console.log(element);
+        profilePhoto.current.src = swirl;
+        profilePhoto.current.className = "profile-photo-rotate"
+    }
+
+
     // RETURN THE CONTENT OF THE PAGE //
     return(
         <HelmetProvider context={helmetContext}>
@@ -100,11 +112,17 @@ const HomePage = () => {
                 <Col sm={12} md={5} className ="order-sm-1 order-md-2">
                     <div id={'home-media'} style={{height: calcMaxHeight + 'px; overflow: hidden', backgroundImage:`url(${bgPattern})`}} onClick = {() => setStop(stopStatus)}>
                         <div style={{height: calcMaxHeight + 'px; overflow: hidden'}}>
-                            <img id="msmImage" src={heroImage} style={{width: '105%', cursor: "pointer", marginTop: "-12px"}} alt='hero artwork' />
+                            <img id="msmImage" src={heroImage} 
+                                 style={{width: '105%', cursor: "pointer", marginTop: "-12px"}} 
+                                 alt='hero artwork' 
+                            />
                         </div>
                     </div>
                     <div>
-                        <img id={mattHomepage} src={mattHomepage} className="profile-photo" alt="Matthew Mayer" />
+                        <img id={mattHomepage} ref={profilePhoto} src={mattHomepage} 
+                             className="profile-photo" alt="Matthew Mayer" 
+                             onClick = {() => getID()}
+                        />
                         <div className="blurb-text">
                             <h1 className="sans">Matthew Mayer</h1>
                             <h3 className="sans">Developer, Marketer</h3>

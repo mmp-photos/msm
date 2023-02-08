@@ -120,9 +120,21 @@ a:hover {
   text-decoration: none;
   color: black;
 }
-.negative-ten-degrees {
-  transform: rotate(-10deg);
+.negative-ten-degrees-left {
+  animation-duration: 12s;
+  animation-name: slide-left;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  rotate: -10deg;
 }
+.negative-ten-degrees-right {
+  animation-duration: 12s;
+  animation-name: slide-right;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  rotate: -10deg;
+}
+
 /*****END GLOBAL STYLES*****/
 
 
@@ -223,6 +235,19 @@ a:hover {
     margin-left: .5rem;
     margin-bottom: 12rem;
     filter: drop-shadow(.25rem .25rem 1rem black);
+  }
+  img.profile-photo-rotate {
+    width: var(--profilePhoto);
+    border-radius: 50%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--light-blue);
+    float: left;
+    margin-right: var(--photo-margin);
+    margin-left: .5rem;
+    margin-bottom: 12rem;
+    filter: drop-shadow(.25rem .25rem 1rem black);
+    animation: rotate 1s linear infinite;
   }
 
   /****END HOMEPAGE STYLES*****/
@@ -464,4 +489,34 @@ a:hover {
   font-size: 32px;
   color: white;
   margin-bottom: 12px;
+}
+
+ /* ANIMATIONS */
+ /*/////////////////////////////////////////////////////////////////////*/
+@keyframes slide-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }

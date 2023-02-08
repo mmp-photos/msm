@@ -30,7 +30,7 @@ const WorkPage = () => {
         <Container className="inner-container">
             <Row>
                 <Col sm={12} md={6} className ="order-sm-1 order-md-2" style={{background: "#f0f1f4", overflow: "hidden"}}>
-                    <Row className="negative-ten-degrees">
+                    <Row className="negative-ten-degrees-left">
                         <Col>
                             <img style={{width: 75}} src={iconAdobePS} alt='Adobe Photoshop' />
                             </Col>
@@ -44,7 +44,7 @@ const WorkPage = () => {
                                 <img style={{width: 75}} src={iconAdobeFonts} alt='Adobe Fonts' />
                             </Col>
                     </Row>
-                    <Row className="negative-ten-degrees" style={{paddingLeft: 86}}>
+                    <Row className="negative-ten-degrees-right" style={{paddingLeft: 86}}>
                         <Col>
                             <img style={{width: 75}} src={iconCss3} alt='CSS 3' />
                         </Col>
@@ -58,7 +58,7 @@ const WorkPage = () => {
                             <img style={{width: 75}} src={iconHTML} alt='HTML 5' />
                         </Col>
                     </Row>
-                    <Row className="negative-ten-degrees" style={{paddingLeft: 12}}>
+                    <Row className="negative-ten-degrees-left" style={{paddingLeft: 12}}>
                         <Col>
                             <img style={{width: 75}} src={iconMongoDB} alt='MongoDB' />
                         </Col>
@@ -72,7 +72,7 @@ const WorkPage = () => {
                             <img style={{width: 75}} src={iconJavascript} alt='Javascript' />
                         </Col>
                     </Row>
-                    <Row className="negative-ten-degrees" style={{paddingLeft: 12}}>
+                    <Row className="negative-ten-degrees-right" style={{paddingLeft: 12}}>
                         <Col>
                             <img style={{width: 75}} src={iconPhp} alt='PHP' />
                         </Col>
