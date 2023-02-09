@@ -44,7 +44,7 @@ const ContactPage = () => {
                             <div className="information">Text or Email</div>
                         </div>
                     </Col>
-                    <Col sm={12} md={4} fluid>
+                    <Col sm={12} md={4}>
                             <button id="resume"
                                 onMouseEnter={() => setResumeStyle({backgroundColor: "#43598a", color: "white"})}
                                 onMouseLeave={() => setResumeStyle({fontStyle: "normal"})}

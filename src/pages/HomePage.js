@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'reactstrap';
 import heroImage from '../assets/images/hero_image.svg';
 import mattHomepage from '../assets/images/mattHomepage.png';
 import swirl from '../assets/images/mattHomepage_swirl.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import bg01 from '../assets/images/backgrounds/bg01.jpg';
 import bg02 from '../assets/images/backgrounds/bg02.jpg';
@@ -91,14 +91,20 @@ const HomePage = () => {
     };
 
     // SELECT ELEMENT BY ID //
-    const profilePhoto = React.useRef(null);
+    const profilePhoto = useRef('');
+    const fullName     = useRef(null);
+
     
     function getID() {
-        const element = profilePhoto.current.style;
-        console.log(element);
+        const element = profilePhoto.current.className;
         profilePhoto.current.src = swirl;
-        profilePhoto.current.className = "profile-photo-rotate"
-    }
+        profilePhoto.current.className = "profile-photo-rotate";
+        setTimeout((element) => {
+            profilePhoto.current.className = "profile-photo";
+            console.log(`The spinning should have stopped`);
+            profilePhoto.current.src = mattHomepage;
+        }, 3000);
+    };
 
 
     // RETURN THE CONTENT OF THE PAGE //
@@ -124,7 +130,7 @@ const HomePage = () => {
                              onClick = {() => getID()}
                         />
                         <div className="blurb-text">
-                            <h1 className="sans">Matthew Mayer</h1>
+                            <h1 className="sans" ref={fullName}>Matthew Mayer</h1>
                             <h3 className="sans">Developer, Marketer</h3>
                             <h3 className="sans">Humorist &amp; Hoosier</h3>
                             <p className="plain-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
