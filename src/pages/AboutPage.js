@@ -71,6 +71,7 @@ const AboutPage = () => {
                 <Row>
                     <Col id="right-column" sm={12} md={6} className ="order-sm-1 order-md-2">
                         <Row>
+                            <h1 className="serif-">Matthew Mayer</h1>
                             <Col>
                                 <div>
                                     <img id="interior-photo-primary" src={dinoPhoto} alt='matt petting a dinosaur' />
@@ -78,7 +79,7 @@ const AboutPage = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <h2>TLDR <span className="d-md-none d-inline"><i className="fa-regular fa-circle-right" style={{fontSize: "1.75rem"}}></i></span></h2>
+                            <h4>TLDR <span className="d-md-none d-inline"><i className="fa-regular fa-circle-right" style={{fontSize: "1.75rem"}}></i></span></h4>
                                     <Col className="d-md-block d-none" style={{paddingLeft: 30}}>
                                     <div id='libra' className="tldr-icon d-flex align-items-center justify-content-center" onClick={onClick => TldrModalZodiac()}>
                                         <img src={libra} className='tldr-image' alt='Libra scales'/><br />
@@ -96,17 +97,30 @@ const AboutPage = () => {
                         </Row>
                     </Col>
                     <Col id="left-column-text" sm={12} md={6} className ="order-sm-2 order-md-1">
-                        <h1 className="sans">Who, What, Where?</h1>
-                            <p className="about">If those sound like the questions of a journalist that's not far off.  Newspapers, magazines and print publicaations were my first love. I spent most of my waking hours in the offices of various campus publications, most notably the Indiana Daily Student.</p>
-                        <p className="about">My name is Matthew Mayer.  I've spent my life in publishing and communications.  From my earliest days at the <a href="https://www.idsnews.com">Indiana Daily Student</a> where I worked on the photography, advertising, and editorial staffs to my professional career converting Dummies Guides to eBooks for the earliest versions of the Kindle, I have loved every minute of my time working in communications.</p>
-                        <h1 className="sans">Everything Old...</h1>
+                        <h3 className="sans uppercase flush-right margin-2y">I'm Matt <br/>a Front End Web Developer,<br/> client communications specialist,<br/> and patterned shirt afficiando.</h3>
+                        <h2>Who, What, Where?</h2>
+                            <p className="about">If those sound like the questions of a journalist that's not far off.  Newspapers, magazines and print publicaations were my first love. I spent most of my waking hours in the offices of various campus publications, most notably the <a href="https://www.idsnews.com/" target="new">Indiana Daily Student</a>.</p>
+                            <p className="about">My name is Matthew Mayer.  I've spent my life in publishing and communications.  From my earliest days at the <a href="https://www.idsnews.com">Indiana Daily Student</a> where I worked on the photography, advertising, and editorial staffs to my professional career converting Dummies Guides to eBooks for the earliest versions of the Kindle, I have loved every minute of my time working in communications.</p>
+                        <h2>Everything Old...</h2>
+                            <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
                         <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
                         <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <h2>Experience</h2>
                         <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
-                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
-                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
-                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
-                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                            <ul>
+                                <li>20 years Customer Service and Technical Support</li>
+                                <li>5 years website and ebook design and coding</li>
+                                <li>5 year graphic design and publication production</li>
+                            </ul>
+                        <h2>Skills</h2>
+                        <p>UI/UX Design / Strategy / Product Management / User Research / Agile Methodologies / Collaboration / Design Sprints / Design Systems / HTML and CSS / CMS Design & Architecture / Webflow Development / Framer Development / Photography / Graphic Design</p>
+                        <h2>Pro Bono and Personal Projects</h2>
+                        <ul>
+                                <li><span className="bold">Website Designer</span> &ndash; Great Schools for America: a not-for-profit educational organization</li>
+                                <li><span className="bold">Website Designer</span> &ndash; Pull Up a Chair Indy: a local story-telling series</li>
+                                <li><span className="bold">Marketing Director</span> &ndash; Circle City Aerodrome: the Indianapolis Steampunk Society</li>
+                                <li><span className="bold">Producer/Marketing Director</span> &ndash; MK Productions: putting on independent theatre productions in Indianapolis</li>
+                            </ul>
                     </Col>
                 </Row>
         </Container>

@@ -1,6 +1,7 @@
 // IMPORTS //
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import {
     Navbar,
     Container,
@@ -8,6 +9,8 @@ import {
     Col,
     Nav,
     NavItem,
+    NavbarToggler,
+    Collapse
 } from 'reactstrap';
 import { useLocation } from 'react-router-dom';
 
@@ -15,6 +18,8 @@ import { useLocation } from 'react-router-dom';
 const Header = (props) => {
     const location = useLocation();
     const locationName = location.pathname;
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
 
     const setPageTitle = (location)  => {
         let pageTitle = "";
@@ -51,24 +56,27 @@ const Header = (props) => {
                     <Container className="outer-container" style={{position: "fixed", left: "50%", transform: "translateX(-50%)"}}>
                             <Row>
                                 <Col>
-                                    <h1 className="page-title" style={{display: "block", marginTop: 15, marginLeft: 35}}>{pageTitle}</h1>
+                                    <h1 className="page-title serif italic">{pageTitle}</h1>
                                 </Col>
                                 <Col id="top-nav">
-                                    <Navbar expand="xs" className="ml-auto">
-                                        <Nav className="justify-content-end" style={{paddingRight: 132}} navbar>
-                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
-                                                <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
-                                            </NavItem>
-                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
-                                                <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
-                                            </NavItem>
-                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
-                                                <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
-                                            </NavItem>
-                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
-                                                <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
-                                            </NavItem>
-                                        </Nav>
+                                    <Navbar expand="md">
+                                        <NavbarToggler onClick={toggle} style={{postion: "fixed", right: "5px"}} />
+                                        <Collapse isOpen={isOpen} navbar>
+                                            <Nav className="me-auto" navbar>
+                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                    <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
+                                                </NavItem>
+                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                    <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
+                                                </NavItem>
+                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                    <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
+                                                </NavItem>
+                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                    <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
+                                                </NavItem>
+                                            </Nav>
+                                        </Collapse>
                                     </Navbar>
                                 </Col>
                             </Row>

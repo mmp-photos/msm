@@ -17,6 +17,7 @@ import iconNode       from '../assets/images/logos/nodejs-icon.svg';
 export const workMain = (workType) => {
     return(
         <div id="right-column">
+        <h2>Click a category for samples of my work.</h2>
         <Row className="negative-ten-degrees-left">
             <Col>
                 <img style={{width: 75}} src={iconAdobePS} alt='Adobe Photoshop' />
@@ -80,20 +81,40 @@ export const workMain = (workType) => {
 export const workDeveloper = () => {
     return(
         <>
-            <h2>Front End Development</h2>
-            <div className='work-skills'></div>
+            <h2>Front End Web Development</h2>
+            <p className="sans">Your brand's online identity is essential to your company.  Websites have only grown in both importance and capability.
+                I understand both.
+            </p>
+            <p className="sans">Specializing in MERN Stack apps built on a solid base of HTML5 and CSS3 I create sites
+                that are flexible and scalable.  Unleash the power of Javascript and MongoDB and pair with existing APIs from Square
+                and Google.  Find the features that best serve your audience and the style that best represents you.
+            </p>
         </>
     )
 };
 
 export const workMarketer = () => {
     return(
-        <p>This is the marketer content</p>
+        <>
+        <h2>Marketing Consultant</h2>
+        <p className="sans">Communicating effectively is the most important thing a company can do for its audience.</p>
+        <p className="sans">It's not only about content and tone.  The medium is equally important.  Should you be blogging?  Or posting to TikTok?
+            Would an email campgaign be the best way to reach your audience? It's all part of a strategy I can provide.
+        </p>
+        <p className="sans">From logo design to establishing a unified tone and messaging strategy I can help you spread your message to your readers.
+        </p>
+        </>
     )
 };
 
 export const workHumor = () => {
     return(
-        <p>This is the humor content</p>
+        <>
+        <h2>Humor Writer</h2>
+        <p className="sans">Being funny isn't as easy as comedians make it look.  Humor - especially satire requires a delicate touch.</p>
+        <p className="sans">I can help punch up existing material.  Give your copy a careful rewrite to bring some targeted levity to your work.
+            With influences from Don Knotts to Jon Stewart I can span the gamut of styles to craft a message and voice that is a specific fit to your need
+        </p>
+        </>
     )
 };

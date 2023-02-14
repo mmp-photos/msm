@@ -1,16 +1,17 @@
 import { Container, Row, Col } from 'reactstrap'
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 const Footer = () => {
     return (
-        <Container fluid className={'px-0 fixed-bottom site-footer'}>
-            <div className="container">
+        <Container fluid className={'site-footer'}>
+            <div className="container centered" style={{height: "100%"}}>
                 <Row>
-                    <Col className=" d-sm-4 d-md-block col-md-8 d-flex align-items-center justify-content-center">
-                    <a className='nav-link' href='/'><h1 className="title">matthew mayer</h1></a>
+                    <Col className=" d-sm-6 col-md-5 offset-md-2 justify-content">
+                        <Link to="/"><h1 className="footer">matthew mayer</h1></Link>
                     </Col>
-                    <Col className="col-xs-12 col-md-3 mr-auto align-self-center">
-                        <footer>
+                    <Col className="col-sm-6 col-md-4">
+                        <footer className="footer-padding-top">
                             <a href="https://www.instagram.com/mmp_photos/" alt='LinkedIN'>
                             <div className='social-buttons' id="instagram"><i className='fa fa-instagram instagram' style={{color: '#c32aa3'}}></i></div>
                             </a>

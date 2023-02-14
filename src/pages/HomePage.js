@@ -5,6 +5,8 @@ import { Container, Row, Col } from 'reactstrap';
 import heroImage from '../assets/images/hero_image.svg';
 import mattHomepage from '../assets/images/mattHomepage.png';
 import swirl from '../assets/images/mattHomepage_swirl.png';
+import swirlFaster from '../assets/images/mattHomepage_swirl_faster.png';
+import swirlProhibitor from '../assets/images/mattHomepageProhibitory.png';
 import { useState, useEffect, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import bg01 from '../assets/images/backgrounds/bg01.jpg';
@@ -27,9 +29,11 @@ const HomePage = () => {
     const [ aboutStyle, setAboutStyle] = useState({});
     const [ workStyle, setWorkStyle] = useState({});
     const [ contactStyle, setContactStyle] = useState({});
+    const [ count, setCount ] = useState(0);
+    const [ prevCount, setPrevCount ] = useState(0);
+    const [ firstRender, setFirstRender ] = useState(true);
     
     // Display welcome message
-    const [ firstRender, setFirstRender ] = useState(true);
     //console.log("the state of firstRender is:", firstRender);
     const welcomeMessage = "Hello!  My name is Matthew and I'm a developer.  If you are seeing this message then you are looking at the console, seeing what may appear.  I confess that I had many messages appearing during development.  Most have been commented out once the functions I was troubleshooting were working properly.  Thanks for check.  Please let me know if there are any unexpected errors showing here!"
     if(firstRender){
@@ -93,17 +97,62 @@ const HomePage = () => {
     // SELECT ELEMENT BY ID //
     const profilePhoto = useRef('');
     const fullName     = useRef(null);
-
+    //console.log(`Current count is ${count}`);
     
-    function getID() {
-        const element = profilePhoto.current.className;
-        profilePhoto.current.src = swirl;
-        profilePhoto.current.className = "profile-photo-rotate";
-        setTimeout((element) => {
-            profilePhoto.current.className = "profile-photo";
-            console.log(`The spinning should have stopped`);
-            profilePhoto.current.src = mattHomepage;
-        }, 3000);
+    function startSpinning() {
+        let element = profilePhoto.current.className;
+
+        if(count <= 1) {
+            profilePhoto.current.src = swirl;
+            profilePhoto.current.className = "profile-photo-rotate";
+
+            setTimeout((element) => {
+                profilePhoto.current.className = "profile-photo";
+                console.log(`The spinning should have stopped`);
+                profilePhoto.current.src = mattHomepage;
+
+                if(count === 0){
+                    fullName.current.innerHTML ="LOL that was fun!"
+                }
+                if(count === 1){
+                    fullName.current.innerHTML ="Whew!<br/>I feel dizzy."
+                }
+                else{
+                    console.log("No text to update.");
+                }
+                setCount(count => count +1 );
+            }, 1000);
+        }
+        else if(count > 1 && count <= 3) {
+            profilePhoto.current.src = swirlFaster;
+            profilePhoto.current.className = "profile-photo-rotate";
+
+            setTimeout((element) => {
+                profilePhoto.current.className = "profile-photo";
+                console.log(`The spinning should have stopped`);
+                profilePhoto.current.src = mattHomepage;
+
+                if(count === 2){
+                    fullName.current.innerHTML ="That's enough,<br />thanks."
+                }
+                if(count === 3){
+                    fullName.current.innerHTML ="HEY!<br/>That's not nice!"
+                }
+                else{
+                    console.log("No text to update.");
+                }
+                setCount(count => count +1 );
+            }, 700);
+        }
+        else if(count >=4) {
+            profilePhoto.current.src = swirlProhibitor;
+            profilePhoto.current.className = "profile-photo-rotate2";
+            fullName.current.innerHTML ="Sorry,<br/>Not this time."
+
+
+        } else {
+            console.log(`Nope!  I'm already dizzy`);
+    }
     };
 
 
@@ -125,15 +174,15 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div>
-                        <img id={mattHomepage} ref={profilePhoto} src={mattHomepage} 
+                        <img id={mattHomepage} ref={profilePhoto} src={mattHomepage}
+                            style={{cursor: "pointer"}}
                              className="profile-photo" alt="Matthew Mayer" 
-                             onClick = {() => getID()}
+                             onClick = {() => startSpinning()}
                         />
                         <div className="blurb-text">
-                            <h1 className="sans" ref={fullName}>Matthew Mayer</h1>
+                            <h2 className="sans normal" ref={fullName}>Matthew Mayer</h2>
                             <h3 className="sans">Developer, Marketer</h3>
                             <h3 className="sans">Humorist &amp; Hoosier</h3>
-                            <p className="plain-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                         </div>
                     </div>
                 </Col>        

@@ -29,41 +29,43 @@ const ContactPage = () => {
             </Helmet>
             <Container className="inner-container">
                 <Row>
-                    <Col style={{textAlign: "center"}}>
-                        <div style={{backgroundColor: "#6d99f9", padding: 32, borderRadius: "30 degrees"}}>
+                    <Col className="contact-column-left">
+                        <div style={{backgroundColor: "#6d99f9", padding: 32, borderRadius: 30}}>
                             <img id={mattHomepage} src={mattHomepage} className="contact-photo" alt="Matthew Mayer" />
-                            <div className="label">Name:</div>
-                            <div className="information">Matthew Mayer</div>
-                            <div className="label">Pronouns:</div>
-                            <div className="information">He/Him</div>
-                            <div className="label">Email:</div>
-                            <div className="information">matt@msm.codes</div>
-                            <div className="label">Phone:</div>
-                            <div className="information">(503) 360-8986</div>
-                            <div className="label">Preferred communication:</div>
-                            <div className="information">Text or Email</div>
+                            <dl>
+                            <dt>Name:</dt>
+                            <dd>Matthew Mayer</dd>
+                            <dt>Pronouns:</dt>
+                            <dd>He/Him</dd>
+                            <dt>Email:</dt>
+                            <dd>matt@msm.codes</dd>
+                            <dt>Phone:</dt>
+                            <dd>(503) 360-8986</dd>
+                            <dt>Preferred:</dt>
+                            <dd>Text or Email</dd>
+                            </dl>
                         </div>
                     </Col>
-                    <Col sm={12} md={4}>
-                            <button id="resume"
+                    <Col sm={12} md={4} style={{textAlign: "center"}}>
+                        <button id="resume"
                                 onMouseEnter={() => setResumeStyle({backgroundColor: "#43598a", color: "white"})}
                                 onMouseLeave={() => setResumeStyle({fontStyle: "normal"})}
                                 onClick={() => downloadResume()}
                                 style={resumeStyle}
                             >
-                                <i className="fa fa-file-pdf"></i>
+                                <span style={{fontSize: "6em"}}><i className="fa fa-file-pdf"></i></span>
                                 <p className="contact-text">Resume</p>
                             </button>
-                        <div id="email"
+                        <button id="email"
                             onMouseEnter={() => setEmailStyle({backgroundColor: "#43598a", color: "white"})}
                             onMouseLeave={() => setEmailStyle({fontStyle: "normal"})}
                             onClick={() => sendMail()}
                             style={emailStyle}
                         
                         >
-                            <i className="fa-regular fa-envelope"></i>
+                            <span style={{fontSize: "6em"}}><i className="fa-regular fa-envelope"></i></span>
                             <p className="contact-text">matt@msm.codes</p>
-                        </div>
+                        </button>
                     </Col>
                     <Col className="d-none d-lg-block">
                         <InstagramEmbed url="https://www.instagram.com/mmp_photos/" width={328}/>
