@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import WorkPage from './pages/WorkPage';
+import TestPage from './pages/TestPage';
 
 // PAGE CONSTRUCTION START //
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/contact" element = {<ContactPage />} />
             <Route path="/about" element = {<AboutPage />} />
             <Route path="/work" element = {<WorkPage />} />
+            <Route path="/test" element = {<TestPage />} />
         </Routes>
       <Footer />
       </>

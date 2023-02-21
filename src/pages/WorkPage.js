@@ -2,14 +2,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useRef, useState } from 'react';
+import { useRef, useState, useParams } from 'react';
 import { workMain, workDeveloper, workMarketer, workHumor } from '../components/WorkCategories';
 
 const helmetContext = {};
 
 // SET UP WORK PAGE FOR MSM CREATIVE WEBSITE //
 const WorkPage = () => {
-    
+
     // DEFINE VARIABLES FOR USE ON THE PAGE //
     const developerButton = useRef(null);
     const marketerButton = useRef(null);
@@ -27,18 +27,21 @@ const WorkPage = () => {
             case "developer":
                 setRightColumnContent(workDeveloper());
                 developerButton.current.className =  "buttons";
-                console.log(developerButton);
+                window.history.pushState({id: 100},"Developer", "/work#developer");
+                //console.log(developerButton);
                 break;
             case "marketer":
                 setRightColumnContent(workMarketer());
+                window.history.pushState({id: 100},"Marketer", "/work#marketer");
                 break;
             case "humor":
                 setRightColumnContent(workHumor());
+                window.history.pushState({id: 100},"Content", "/work#content");
                 break;
             default:
                 setRightColumnContent(workMain());
         }
-        console.log('workCategories has executed');
+        //console.log('workCategories has executed');
     };
 
     return(
@@ -72,7 +75,7 @@ const WorkPage = () => {
                             style={humorStyle}
                             onClick = {() => workCategories("humor")}
                             >
-                            Humor
+                            Content
                         </button>
                     </div>
                 </Col>

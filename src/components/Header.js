@@ -60,19 +60,19 @@ const Header = (props) => {
                                 </Col>
                                 <Col id="top-nav">
                                     <Navbar expand="md">
-                                        <NavbarToggler onClick={toggle} style={{postion: "fixed", right: "5px"}} />
+                                        <NavbarToggler onClick={toggle} style={{marginLeft: "auto", marginRight: "5px", backgroundColor: "#6d99f9"}} />
                                         <Collapse isOpen={isOpen} navbar>
                                             <Nav className="me-auto" navbar>
-                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
                                                     <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
                                                 </NavItem>
-                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
                                                     <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
                                                 </NavItem>
-                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
                                                     <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
                                                 </NavItem>
-                                                <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
                                                     <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
                                                 </NavItem>
                                             </Nav>

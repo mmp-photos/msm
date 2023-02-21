@@ -1,0 +1,56 @@
+/* DESKTOP STYLES */
+:root {
+  --background-color: #F0F1F4;
+  --yellow-highlight :#faf4b6;
+  --light-blue: #6d99f9;
+  --dark-blue: #43598a;
+
+  --columnWidth: 500px;
+  --carouselHeight: 300px
+
+}
+
+/* MOBILE SITE VARIABLES */
+@media (max-width: 850px) {  
+  :root {
+    --columnWidth: 101%;
+    
+  }
+}
+.main-slide {
+    width: var(--columWidth);
+    height: 300px;
+    background-image: url(../images/marketing01.png);
+    background-size: cover;
+    align-items: center;
+}
+
+.slide-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 65%;
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-left: 12px;
+    background-color: var(--light-blue);
+    color: var(--yellow-highlight);
+}
+
+.slide-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 65%;
+    float: right;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-color: var(--light-blue);
+    color: var(--yellow-highlight);
+}

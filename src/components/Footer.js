@@ -15,8 +15,8 @@ const Footer = () => {
                             <a href="https://www.instagram.com/mmp_photos/" alt='LinkedIN'>
                             <div className='social-buttons' id="instagram"><i className='fa fa-instagram instagram' style={{color: '#c32aa3'}}></i></div>
                             </a>
-                            <a href="https://www.facebook.com/matthew.mayer.77/" alt='LinkedIN'>
-                            <div className='social-buttons' id="facebook"><i className="fa fa-facebook facebook" style={{color: 'white'}}></i></div>
+                            <a href="https://codepen.io/matthew-mayer" alt='LinkedIN'>
+                            <div className='social-buttons' id="codepen" style={{color: "grey"}}><i className="fa-brands fa-codepen"></i></div>
                             </a>
                             <a href="https://github.com/mmp-photos" alt='LinkedIN'>
                             <div className='social-buttons' id="github"><i className='fa fa-github' style={{color: '#410093'}}></i></div>
