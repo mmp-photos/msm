@@ -9,7 +9,7 @@ import content01 from '../assets/images/portfolio/content01.png';
 import content02 from '../assets/images/portfolio/content02.png';
 
 const Carousel = (slideDeck) => {
-
+    console.log('Need to committ');
     // DETERMINE THE CAROUSEL IMAGES TO USE BASED ON THE URL //
     let developerSlides = [developer01, developer02];
     let marketerSlides = [marketer01, marketer02];
