@@ -115,7 +115,7 @@ const HomePage = () => {
                     fullName.current.innerHTML ="LOL that was fun!"
                 }
                 if(count === 1){
-                    fullName.current.innerHTML ="Whew!<br/>I feel dizzy."
+                    fullName.current.innerHTML ="I feel dizzy!"
                 }
                 else{
                     console.log("No text to update.");
@@ -133,10 +133,10 @@ const HomePage = () => {
                 profilePhoto.current.src = mattHomepage;
 
                 if(count === 2){
-                    fullName.current.innerHTML ="That's enough,<br />thanks."
+                    fullName.current.innerHTML ="Enough,<br />thanks."
                 }
                 if(count === 3){
-                    fullName.current.innerHTML ="HEY!<br/>That's not nice!"
+                    fullName.current.innerHTML ="That's not nice!"
                 }
                 else{
                     console.log("No text to update.");
@@ -147,7 +147,7 @@ const HomePage = () => {
         else if(count >=4) {
             profilePhoto.current.src = swirlProhibitor;
             profilePhoto.current.className = "profile-photo-rotate2";
-            fullName.current.innerHTML ="Sorry,<br/>Not this time."
+            fullName.current.innerHTML ="Sorry,<br/>No more."
 
 
         } else {
@@ -179,7 +179,7 @@ const HomePage = () => {
                              className="profile-photo" alt="Matthew Mayer" 
                              onClick = {() => startSpinning()}
                         />
-                        <div className="blurb-text">
+                        <div>
                             <h2 className="sans normal" ref={fullName}>Matthew Mayer</h2>
                             <h3 className="sans">Developer, Marketer</h3>
                             <h3 className="sans">Humorist &amp; Hoosier</h3>

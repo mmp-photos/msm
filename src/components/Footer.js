@@ -7,7 +7,7 @@ const Footer = () => {
         <Container fluid className={'site-footer'}>
             <div className="container centered" style={{height: "100%"}}>
                 <Row>
-                    <Col className=" d-sm-6 col-md-5 offset-md-2 justify-content">
+                    <Col className=" d-sm-6 col-md-8 offset-md-0 align-items">
                         <Link to="/"><h1 className="footer">matthew mayer</h1></Link>
                     </Col>
                     <Col className="col-sm-6 col-md-4">

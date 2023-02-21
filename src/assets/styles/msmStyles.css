@@ -26,7 +26,7 @@
     
     /* SPACING VARIABLES */
     --left-column-padding: 8em;
-    --photo-margin: 4em;
+    --photo-margin: 2em;
     --interior-photo-padding: 0em 0em 3.25em 0em;
     --mobile-only-clear: none;
     --mobile-only-padding-top: 0em;
@@ -292,14 +292,12 @@ h1.footer {
 /* HOMEPAGE STYLES */
  /*/////////////////////////////////////////////////////////////////////*/
   #home-about {
-    background-color: var(--background-color);
     font-size: var(--nav-text);
     font-family: var(--serif-fonts);
     display: var(--nav-display);
     margin: var(--align-right-to-center);
   }
   #home-contact {
-    background-color: var(--background-color);
     font-size: var(--nav-text);
     font-family: var(--serif-fonts);
     display: var(--nav-display);
@@ -317,7 +315,6 @@ h1.footer {
     font-family: var(--serif-fonts);
     display: var(--nav-display);
     margin: var(--align-right-to-center);
-    background-image: var(--nav-gradient);
   }
   img.profile-photo {
     width: var(--profilePhoto);
@@ -329,7 +326,7 @@ h1.footer {
     margin-right: var(--photo-margin);
     margin-left: .5em;
     margin-bottom: 2em;
-    filter: drop-shadow(.25em .25em 1em black);
+    filter: drop-shadow(.15em .15em .5em black);
     cursor: "pointer";
   }
   img.profile-photo-rotate {
