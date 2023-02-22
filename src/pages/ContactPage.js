@@ -1,7 +1,6 @@
 // IMPORTS //
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { useState } from 'react';
 import mattHomepage from '../assets/images/mattHomepage.png';
 import { InstagramEmbed } from 'react-social-media-embed';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -11,9 +10,6 @@ const helmetContext = {};
 
 // CREATE CONTACT PAGE //
 const ContactPage = () => {
-    const [ resumeStyle, setResumeStyle] = useState({});
-    const [ emailStyle, setEmailStyle]   = useState({});
-
     const downloadResume = () => {
         window.open(pdf, "_blank");
     };
@@ -27,10 +23,11 @@ const ContactPage = () => {
             <Helmet>
                 <title>Contact Me | Matthew Mayer</title>
             </Helmet>
-            <Container className="inner-container">
+            <main>
+            <Container>
                 <Row>
-                    <Col className="contact-column-left">
-                        <div style={{backgroundColor: "#6d99f9", padding: 32, borderRadius: 30}}>
+                    <Col className="sm-8 md-3 offset-sm-2">
+                        <aside>
                             <img id={mattHomepage} src={mattHomepage} className="contact-photo" alt="Matthew Mayer" />
                             <dl>
                             <dt>Name:</dt>
@@ -44,27 +41,20 @@ const ContactPage = () => {
                             <dt>Preferred:</dt>
                             <dd>Text or Email</dd>
                             </dl>
-                        </div>
+                        </aside>
                     </Col>
-                    <Col sm={12} md={4} style={{textAlign: "center"}}>
-                        <button id="resume"
-                                onMouseEnter={() => setResumeStyle({backgroundColor: "#43598a", color: "white"})}
-                                onMouseLeave={() => setResumeStyle({fontStyle: "normal"})}
-                                onClick={() => downloadResume()}
-                                style={resumeStyle}
-                            >
-                                <span style={{fontSize: "6em"}}><i className="fa fa-file-pdf"></i></span>
-                                <p className="contact-text">Resume</p>
-                            </button>
-                        <button id="email"
-                            onMouseEnter={() => setEmailStyle({backgroundColor: "#43598a", color: "white"})}
-                            onMouseLeave={() => setEmailStyle({fontStyle: "normal"})}
-                            onClick={() => sendMail()}
-                            style={emailStyle}
-                        
+                    <Col className="button-contact-box" sm={12} md={4}>
+                        <button className="contact"
+                            onClick={() => downloadResume()}
                         >
-                            <span style={{fontSize: "6em"}}><i className="fa-regular fa-envelope"></i></span>
-                            <p className="contact-text">matt@msm.codes</p>
+                            <i className="fa fa-file-pdf large-text"></i>
+                            <p className="half-size-text">Resume</p>
+                        </button>
+                        <button className="contact"
+                            onClick={() => sendMail()}
+                        >
+                            <i className="fa-regular fa-envelope large-text"></i>
+                            <p className="half-size-text">matt@msm.codes</p>
                         </button>
                     </Col>
                     <Col className="d-none d-lg-block">
@@ -72,6 +62,7 @@ const ContactPage = () => {
                     </Col>
                 </Row>
             </Container>
+            </main>
         </HelmetProvider>
         </>
     )

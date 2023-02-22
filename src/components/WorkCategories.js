@@ -4,7 +4,6 @@ import Carousel from '../utils/Carousel';
 import iconAdobePS    from '../assets/images/logos/photoshop.svg';
 import iconAdobeFonts from '../assets/images/logos/fonts.svg';
 import iconAdobeAI from '../assets/images/logos/illustrator.svg';
-import iconAdobeID from '../assets/images/logos/indesign.svg';
 import iconReact      from '../assets/images/logos/react-2.svg';
 import iconHTML       from '../assets/images/logos/html-1.svg';
 import iconCss3       from '../assets/images/logos/css-3.svg';
@@ -17,61 +16,49 @@ import iconNode       from '../assets/images/logos/nodejs-icon.svg';
 
 export const workMain = (workType) => {
     return(
-        <div id="right-column" style={{backgroundColor: "#43598a", width: "105%"}}>
+        <div style={{ backgroundColor: "#43598a", borderRadius: "30px", height: "300px", overflow: "hidden"}}>
         <Row className="negative-ten-degrees-left">
             <Col>
-                <img style={{width: 75}} src={iconAdobePS} alt='Adobe Photoshop' />
-                </Col>
-                <Col>
-                    <img style={{width: 75}} src={iconAdobeAI} alt='Adobe Illustrator' />
-                </Col>
-                <Col>
-                    <img style={{width: 75}} src={iconAdobeID} alt='Adobe InDesign' />
-                </Col>
-                <Col>
-                    <img style={{width: 75}} src={iconAdobeFonts} alt='Adobe Fonts' />
-                </Col>
+                <img className="sliding-icons"s src={iconAdobeAI} alt='Adobe Illustrator' />
+            </Col>
+            <Col>
+                <img className="sliding-icons" src={iconAdobePS} alt='Adobe Photoshop' />
+            </Col>
+            <Col>
+                <img className="sliding-icons" src={iconJavascript} alt='Javascript' />
+            </Col>
         </Row>
         <Row className="negative-ten-degrees-right" style={{paddingLeft: 86}}>
             <Col>
-                <img style={{width: 75}} src={iconCss3} alt='CSS 3' />
+                <img className="sliding-icons" src={iconCss3} alt='CSS 3' />
             </Col>
             <Col>
-                <img style={{width: 75}} src={iconReact} alt='React.js' />
+                <img className="sliding-icons" src={iconReact} alt='React.js' />
             </Col>
             <Col>
-                <img style={{width: 75}} src={iconAdobePS} alt='Adobe Photoshop' />
-            </Col>
-            <Col>
-                <img style={{width: 75}} src={iconHTML} alt='HTML 5' />
+                <img className="sliding-icons" src={iconAdobeFonts} alt='Adobe Fonts' />
             </Col>
         </Row>
         <Row className="negative-ten-degrees-left" style={{paddingLeft: 12}}>
             <Col>
-                <img style={{width: 75}} src={iconMongoDB} alt='MongoDB' />
+                <img className="sliding-icons" src={iconMySQL} alt='MySQL' />
             </Col>
             <Col>
-                <img style={{width: 75}} src={iconMySQL} alt='MySQL' />
+                <img className="sliding-icons" src={iconMongoDB} alt='MongoDB' />
             </Col>
             <Col>
-                <img style={{width: 75}} src={iconBoostrap} alt='Bootstrap' />
-            </Col>
-            <Col>
-                <img style={{width: 75}} src={iconJavascript} alt='Javascript' />
+                <img className="sliding-icons" src={iconBoostrap} alt='Bootstrap' />
             </Col>
         </Row>
         <Row className="negative-ten-degrees-right" style={{paddingLeft: 12}}>
             <Col>
-                <img style={{width: 75}} src={iconPhp} alt='PHP' />
+                <img className="sliding-icons" src={iconHTML} alt='HTML5' />
             </Col>
             <Col>
-                <img style={{width: 75}} src={iconNode} alt='Node' />
+                <img className="sliding-icons" src={iconNode} alt='Node' />
             </Col>
             <Col>
-                <img style={{width: 75}} src={iconBoostrap} alt='Bootstrap' />
-            </Col>
-            <Col>
-                <img style={{width: 75}} src={iconJavascript} alt='Javascript' />
+                <img className="sliding-icons" src={iconPhp} alt='PHP' />
             </Col>
         </Row>
     </div>
@@ -82,19 +69,15 @@ export const workDeveloper = () => {
     let slideDeck = "developer";
     return(
         <>
-            <div>
-            <Carousel slides={{slides: slideDeck}}/>
-            </div>
-            <div id="left-column-text">
-                <h2>Front End Web Development</h2>
-                <p className="sans">Your brand's online identity is essential to your company.  Websites have only grown in both importance and capability.
-                    I understand both.
-                </p>
-                <p className="sans">Specializing in MERN Stack apps built on a solid base of HTML5 and CSS3 I create sites
-                    that are flexible and scalable.  Unleash the power of Javascript and MongoDB and pair with existing APIs from Square
-                    and Google.  Find the features that best serve your audience and the style that best represents you.
-                </p>
-            </div>
+        <Carousel slides={{slides: slideDeck}}/>
+            <h2>Front End Web Development</h2>
+            <p className="sans">Your brand's online identity is essential to your company.  Websites have only grown in both importance and capability.
+                I understand both.
+            </p>
+            <p className="sans">Specializing in MERN Stack apps built on a solid base of HTML5 and CSS3 I create sites
+                that are flexible and scalable.  Unleash the power of Javascript and MongoDB and pair with existing APIs from Square
+                and Google.  Find the features that best serve your audience and the style that best represents you.
+            </p>
         </>
     )
 };
@@ -103,18 +86,14 @@ export const workMarketer = () => {
     let slideDeck = "marketer";
     return(
         <>
-            <div>
             <Carousel slides={{slides: slideDeck}}/>
-            </div>
-            <div id="left-column-text">
-                <h2>Marketing Consultant</h2>
-                <p className="sans">Communicating effectively is the most important thing a company can do for its audience.</p>
-                <p className="sans">It's not only about content and tone.  The medium is equally important.  Should you be blogging?  Or posting to TikTok?
-                    Would an email campgaign be the best way to reach your audience? It's all part of a strategy I can provide.
-                </p>
-                <p className="sans">From logo design to establishing a unified tone and messaging strategy I can help you spread your message to your readers.
-                </p>
-            </div>
+            <h2>Marketing Consultant</h2>
+            <p className="sans">Communicating effectively is the most important thing a company can do for its audience.</p>
+            <p className="sans">It's not only about content and tone.  The medium is equally important.  Should you be blogging?  Or posting to TikTok?
+                Would an email campgaign be the best way to reach your audience? It's all part of a strategy I can provide.
+            </p>
+            <p className="sans">From logo design to establishing a unified tone and messaging strategy I can help you spread your message to your readers.
+            </p>
         </>
     )
 };

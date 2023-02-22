@@ -1,7 +1,7 @@
 // IMPORTS //
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import heroImage from '../assets/images/hero_image.svg';
 import mattHomepage from '../assets/images/mattHomepage.png';
 import swirl from '../assets/images/mattHomepage_swirl.png';
@@ -26,11 +26,7 @@ const HomePage = () => {
 
     const [ isStopped, setStop ]      = useState(false);
     const [ bgPattern, setBackground] = useState(bg04);
-    const [ aboutStyle, setAboutStyle] = useState({});
-    const [ workStyle, setWorkStyle] = useState({});
-    const [ contactStyle, setContactStyle] = useState({});
     const [ count, setCount ] = useState(0);
-    const [ prevCount, setPrevCount ] = useState(0);
     const [ firstRender, setFirstRender ] = useState(true);
     
     // Display welcome message
@@ -76,23 +72,7 @@ const HomePage = () => {
     var clientWidth = window.innerWidth;
     clientWidth /= 2.14;
     const calcMaxHeight = Math.ceil(clientWidth) - 12;
-
-    //SET UP LINKS AND STYLE CHANGES OF PRIMARY BUTTONS //
-    const updateStyle = (style) => {
-        switch(style){
-            case "about":
-                setAboutStyle({fontStyle: "italic"});
-                break;
-            case "work":
-                setWorkStyle({fontStyle: "italic"});
-                break;
-            case "contact":
-                setContactStyle({fontStyle: "italic"});
-                break;
-            default:
-                console.log(`updateStyle value is default`);
-        }
-    };
+    const calcMaxHeightAdjusted = Math.ceil(clientWidth) - 14;
 
     // SELECT ELEMENT BY ID //
     const profilePhoto = useRef('');
@@ -115,7 +95,7 @@ const HomePage = () => {
                     fullName.current.innerHTML ="LOL that was fun!"
                 }
                 if(count === 1){
-                    fullName.current.innerHTML ="I feel dizzy!"
+                    fullName.current.innerHTML ="Whew!<br /> I feel dizzy..."
                 }
                 else{
                     console.log("No text to update.");
@@ -133,10 +113,10 @@ const HomePage = () => {
                 profilePhoto.current.src = mattHomepage;
 
                 if(count === 2){
-                    fullName.current.innerHTML ="Enough,<br />thanks."
+                    fullName.current.innerHTML ="That's enough,<br />thanks."
                 }
                 if(count === 3){
-                    fullName.current.innerHTML ="That's not nice!"
+                    fullName.current.innerHTML ="HEY!<br /> That's not nice!"
                 }
                 else{
                     console.log("No text to update.");
@@ -147,7 +127,7 @@ const HomePage = () => {
         else if(count >=4) {
             profilePhoto.current.src = swirlProhibitor;
             profilePhoto.current.className = "profile-photo-rotate2";
-            fullName.current.innerHTML ="Sorry,<br/>No more."
+            fullName.current.innerHTML ="Nope,<br/>I'm done, sorry."
 
 
         } else {
@@ -162,13 +142,13 @@ const HomePage = () => {
         <Helmet>
             <title>Matthew S Mayer</title>
         </Helmet>
-        <Container className="inner-container">
+        <main>
             <Row>
-                <Col sm={12} md={5} className ="order-sm-1 order-md-2">
-                    <div id={'home-media'} style={{height: calcMaxHeight + 'px; overflow: hidden', backgroundImage:`url(${bgPattern})`}} onClick = {() => setStop(stopStatus)}>
+                <Col sm={12} md={5} className ="d-sm-12 d-md-5 order-sm-1 order-md-2">
+                    <div id={'home-media'} style={{height: calcMaxHeightAdjusted + 'px; overflow: hidden', backgroundSize: "contain", backgroundImage:`url(${bgPattern})`}} onClick = {() => setStop(stopStatus)}>
                         <div style={{height: calcMaxHeight + 'px; overflow: hidden'}}>
                             <img id="msmImage" src={heroImage} 
-                                 style={{width: '105%', cursor: "pointer", marginTop: "-12px"}} 
+                                 style={{width: '102%', cursor: "pointer", marginTop: "-12px"}} 
                                  alt='hero artwork' 
                             />
                         </div>
@@ -179,35 +159,23 @@ const HomePage = () => {
                              className="profile-photo" alt="Matthew Mayer" 
                              onClick = {() => startSpinning()}
                         />
-                        <div>
-                            <h2 className="sans normal" ref={fullName}>Matthew Mayer</h2>
-                            <h3 className="sans">Developer, Marketer</h3>
-                            <h3 className="sans">Humorist &amp; Hoosier</h3>
-                        </div>
+                        <h2 className="full-name" ref={fullName}>Matthew Mayer</h2>
+                        <h3 className="sans">Developer, Marketer<br/> Humorist &amp; Hoosier</h3>
                     </div>
-                </Col>        
-                <Col sm={12} md={5} className ="order-sm-2 order-md-1">
-                    <button id="home-work" 
-                        onMouseEnter={() => updateStyle("work")}
-                        onMouseLeave={() => setWorkStyle({fontStyle: "normal"})}
-                        style={workStyle}>
+                </Col>
+                <Col sm={12} md={5} className ="d-flex flex-column justify-content-center align-items-end order-sm-2 order-md-1">
+                    <button>
                         <Link to="/work">Work.</Link>
                     </button>
-                    <button id="home-about"
-                        onMouseEnter={() => updateStyle("about")}
-                        onMouseLeave={() => setAboutStyle({fontStyle: "normal"})}
-                        style={aboutStyle}>
+                    <button>
                         <Link to="/about">About.</Link>
                     </button>
-                    <button type="button" id="home-contact"
-                        onMouseEnter={() => updateStyle("contact")}
-                        onMouseLeave={() => setContactStyle({fontStyle: "normal"})}
-                        style={contactStyle}>
+                    <button type="button" id="home-contact">
                         <Link to="/contact">Contact.</Link>
                     </button>
                 </Col>
             </Row>
-        </Container>
+        </main>
         </HelmetProvider>
     )
 }

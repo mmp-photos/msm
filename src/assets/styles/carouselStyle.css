@@ -5,9 +5,7 @@
   --light-blue: #6d99f9;
   --dark-blue: #43598a;
 
-  --columnWidth: 500px;
-  --carouselHeight: 300px
-
+  --columnWidth: 100%;
 }
 
 /* MOBILE SITE VARIABLES */
@@ -18,11 +16,14 @@
   }
 }
 .main-slide {
-    width: var(--columWidth);
-    height: 300px;
+    height: 200px;
     background-image: url(../images/marketing01.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     align-items: center;
+    margin-left: 0px;
+    margin-bottom: 12px;
 }
 
 .slide-prev {

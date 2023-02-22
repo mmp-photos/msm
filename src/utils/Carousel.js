@@ -14,13 +14,14 @@ const Carousel = (slideDeck) => {
     let developerSlides = [developer01, developer02];
     let marketerSlides = [marketer01, marketer02];
     let contentSlides = [content01, content02];
+
     let slides =[];
 
     switch(slideDeck.slides.slides){
         case "developer":{
             slides.push(developer01, developer02);
             break;
-        };
+        }
         case "marketer": {
             slides.push(marketer01, marketer02);
             break;
@@ -29,7 +30,11 @@ const Carousel = (slideDeck) => {
             slides.push(content01, content02);
             break;
         }
-    }
+        default:{
+            slides.push(developer01, developer02);
+            break;
+        }
+    };
 
     const [current, setCurrent] = useState(0);
     const carouselBackground = useRef();

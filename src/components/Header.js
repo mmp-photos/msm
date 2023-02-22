@@ -53,34 +53,36 @@ const Header = (props) => {
             }
             else {
                 return(
-                    <Container className="outer-container" style={{position: "fixed", left: "50%", transform: "translateX(-50%)"}}>
-                            <Row>
-                                <Col>
-                                    <h1 className="page-title serif italic">{pageTitle}</h1>
-                                </Col>
-                                <Col id="top-nav">
-                                    <Navbar expand="md">
-                                        <NavbarToggler onClick={toggle} style={{marginLeft: "auto", marginRight: "5px", backgroundColor: "#6d99f9"}} />
-                                        <Collapse isOpen={isOpen} navbar>
-                                            <Nav className="me-auto" navbar>
-                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
-                                                    <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
-                                                </NavItem>
-                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
-                                                    <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
-                                                </NavItem>
-                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
-                                                    <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
-                                                </NavItem>
-                                                <NavItem className="hamburgerTopping" style={{paddingLeft: 12, paddingRight: 12}}>
-                                                    <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
-                                                </NavItem>
-                                            </Nav>
-                                        </Collapse>
-                                    </Navbar>
-                                </Col>
-                            </Row>
+                    <header>
+                    <Container>
+                        <Row style={{width: "100%"}}>
+                            <Col className="d-sm-9 d-md-6 d-flex justify-content-start">
+                                <h1>{pageTitle}</h1>
+                            </Col>
+                            <Col className="d-sm-3 d-md-6 d-flex justify-content-center">
+                                <Navbar expand="md">
+                                    <NavbarToggler onClick={toggle} />
+                                    <Collapse isOpen={isOpen} navbar>
+                                        <Nav className="me-auto" navbar>
+                                            <NavItem>
+                                                <NavLink to="/">Home</NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink to="/about">About</NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink to="/work">Work</NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink to="/contact">Contact</NavLink>
+                                            </NavItem>
+                                        </Nav>
+                                    </Collapse>
+                                </Navbar>
+                            </Col>
+                        </Row>
                     </Container>
+                    </header>
                 )
             }
         }

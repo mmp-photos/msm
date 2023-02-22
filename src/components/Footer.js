@@ -4,31 +4,29 @@ import React from 'react';
 
 const Footer = () => {
     return (
+        <footer>
         <Container fluid className={'site-footer'}>
-            <div className="container centered" style={{height: "100%"}}>
-                <Row>
-                    <Col className=" d-sm-6 col-md-8 offset-md-0 align-items">
-                        <Link to="/"><h1 className="footer">matthew mayer</h1></Link>
-                    </Col>
-                    <Col className="col-sm-6 col-md-4">
-                        <footer className="footer-padding-top">
-                            <a href="https://www.instagram.com/mmp_photos/" alt='LinkedIN'>
-                            <div className='social-buttons' id="instagram"><i className='fa fa-instagram instagram' style={{color: '#c32aa3'}}></i></div>
-                            </a>
-                            <a href="https://codepen.io/matthew-mayer" alt='LinkedIN'>
-                            <div className='social-buttons' id="codepen" style={{color: "grey"}}><i className="fa-brands fa-codepen"></i></div>
-                            </a>
-                            <a href="https://github.com/mmp-photos" alt='LinkedIN'>
-                            <div className='social-buttons' id="github"><i className='fa fa-github' style={{color: '#410093'}}></i></div>
-                            </a>
-                            <a href="https://www.linkedin.com/in/matthew-s-mayer/" alt='LinkedIN'>
-                            <div className='social-buttons' id="linkedin"><i className="fa fa-linkedin" style={{color: '#0077b5'}}></i></div>
-                            </a>
-                        </footer>
-                    </Col>
-                </Row>
-            </div>
+            <Row>
+                <Col className="d-flex justify-content-center align-items-center d-xs-6 col-md-8">
+                    <Link to="/"><h4>matthew mayer</h4></Link>
+                </Col>
+                <Col className="d-flex justify-content-start align-items-center col-xs-6 col-md-4">
+                    <a href="https://www.instagram.com/mmp_photos/" alt='LinkedIN'>
+                        <i className='fa fa-instagram instagram'></i>
+                    </a>
+                    <a href="https://codepen.io/matthew-mayer" alt='LinkedIN'>
+                        <i className="fa-brands fa-codepen"></i>
+                    </a>
+                    <a href="https://github.com/mmp-photos" alt='LinkedIN'>
+                        <i className='fa fa-github'></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/matthew-s-mayer/" alt='LinkedIN'>
+                        <i className="fa fa-linkedin"></i>
+                    </a>
+                </Col>
+            </Row>
         </Container>
+        </footer>
     )
 }
 
