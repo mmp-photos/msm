@@ -383,7 +383,23 @@
     margin-right: auto;
     margin-bottom: 12px;
   }
-
+  .about2-modal {
+    border-radius: 0px;
+    background-color: rebeccapurple;
+    transform: scale(1.15);
+  
+    transition:
+      transform 300.5s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+      opacity 40.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  }
+  .modal-backdrop {
+    background-color: var(--dark-blue);
+ }
+ .modal-content{
+    background-color: rebeccapurple;
+    border-radius: 0%;
+    overflow:hidden;
+ }
 /***** IMAGE STYLES ******/
   img.contact-photo {
     width: var(--contactPhoto);

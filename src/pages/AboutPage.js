@@ -141,15 +141,12 @@ const AboutPage = () => {
             </Container>
             </main>
 
-    <Modal className="about-modal" isOpen={loginModalOpen}>
-    <ModalHeader className="about-modal-header" toggle={() => setLoginModalOpen(false)} >
-        <span className="h2-modal">{content.title}</span>
-    </ModalHeader>
+    <Modal className="about2-modal" 
+        isOpen={loginModalOpen}
+        style={{fontSize: "3em", color: "green"}}>
 
-    <ModalBody>
         <img className="modal-image" src={content.image} alt='from the modal' />
         {parse('<div>' + content.text + '</div>')}
-    </ModalBody>
     </Modal>
     </HelmetProvider>
     )
