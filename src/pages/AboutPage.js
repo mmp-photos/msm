@@ -1,6 +1,6 @@
 // IMPORTS //
 import React from 'react';
-import { Container, Row, Col, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Container, Row, Col, Modal } from 'reactstrap';
 import { useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import parse from 'html-react-parser';
@@ -16,8 +16,9 @@ const helmetContext = {};
 // SET UP ABOUT PAGE FOR MSM CREATIVE WEBSITE //
 const AboutPage = () => {
     const [loginModalOpen, setLoginModalOpen] = useState(false);
-    console.log(loginModalOpen);
     let [content, updateContent] = useState({});
+    const [ tldrOpen, settldrOpen ] = useState(false);
+
 
     const TldrModalMBTI = () => {
         setLoginModalOpen(true);
@@ -81,8 +82,8 @@ const AboutPage = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <h4 className="italic">TL:DR <span className="d-md-none d-inline"><i className="fa-regular fa-circle-right" style={{fontSize: "1.75rem"}}></i></span></h4>
-                                    <Col className="d-flex">
+                            <h4 className="italic">TL:DR <span className="d-md-none d-inline"><i className="fa-solid fa-angle-right" style={{color: "green"}}></i></span></h4>
+                                    <Col style={{display: "none"}}>
                                     <div id='libra' className="tldr-icon" >
                                         <img src={libra} className='tldr-image' onClick={onClick => TldrModalZodiac()} alt='Libra scales'/>
                                     </div>
@@ -141,15 +142,12 @@ const AboutPage = () => {
             </Container>
             </main>
 
-    <Modal className="about-modal" isOpen={loginModalOpen}>
-    <ModalHeader className="about-modal-header" toggle={() => setLoginModalOpen(false)} >
-        <span className="h2-modal">{content.title}</span>
-    </ModalHeader>
+    <Modal className="about2-modal" 
+        isOpen={loginModalOpen}
+        style={{fontSize: "3em", color: "green"}}>
 
-    <ModalBody>
         <img className="modal-image" src={content.image} alt='from the modal' />
         {parse('<div>' + content.text + '</div>')}
-    </ModalBody>
     </Modal>
     </HelmetProvider>
     )

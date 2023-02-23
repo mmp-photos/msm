@@ -44,7 +44,6 @@
     --header-title-text: 8em;
     --footer-font-size: 1.95em;
     --footer-links: .75em;
-    --nav-items: 1em;
     --homepage-buttons: 4em;
     --large-text: 2.5em;
     --standard-size-text: 1em;
@@ -52,7 +51,7 @@
     --work-button-fonts: 3em;
 
     /* HEADER VARIABLES */
-    --nav-text-top: .85em;
+    --nav-text-top: .90em;
     --nav-display: block;
     --nav-margin-top: 20em;
 
@@ -108,14 +107,14 @@
     --footer-font-size: 1em;
     --footer-links: .5em;
     --nav-items: 1.15em;
-    --homepage-buttons: 4em;
+    --homepage-buttons: 2.5em;
     --large-text: 3em;
     --standard-size-text: 1em;
     --half-size-text: .5em;
     --work-button-fonts: 1.25em;
 
     /* HEADER VARIABLES */
-    --nav-text-top: 1em;
+    --nav-text-top: 2.5em;
     --nav-display: block;
     --nav-margin-top: 20em;
 
@@ -135,8 +134,8 @@
 
     /* MOBILE ONLY VARIABLES */
     --mobile-gradient: linear-gradient(50deg, white 0%, #6d99f9 76%);
-    --homepage-button-margin: 0 0 16px 0px;
-    --homepage-button-padding: 0 9px 0 32px;
+    --homepage-button-margin: 0 -12px 32px 0px;
+    --homepage-button-padding: 0 16px 0 64px;
     --carousel-width: 100%;
     --mobile-row: row;
     }
@@ -319,6 +318,8 @@
     .work-buttons {
         font-size: var(--work-button-fonts);
         background-image: none;
+        margin: 12px;
+        padding: 0px;
     }
     .button-contact-box{
         display: flex;
@@ -358,6 +359,13 @@
     #home-media {
         overflow: hidden;
         padding: 0px
+    }
+    nav{
+        background-color: var(--background-color);
+        font-size: var(--nav-text-top);
+    }
+    .navbar-toggler {
+        margin: 0 auto;
     }
     .skills-box {
         background-color: var(--dark-blue);

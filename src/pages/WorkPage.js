@@ -15,6 +15,12 @@ const WorkPage = () => {
     const marketerButton = useRef(null);
     const humorButton = useRef(null);
     const [ rightColumnContent, setRightColumnContent ] = useState(workMain());
+    const [ reloadRightColumn, setReloadRightColumn ] = useState(false);
+
+    // CHECK IF PAGE IS BEING RELOADED //
+    if(reloadRightColumn){
+        setRightColumnContent(workMain());
+    };
 
     // SET FUNCTIONS TO LOAD RIGHT COLUMN OPTIONS //
     const workCategories = (type) => {

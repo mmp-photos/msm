@@ -13,6 +13,7 @@ import {
     Collapse
 } from 'reactstrap';
 import { useLocation } from 'react-router-dom';
+import { workMain } from '../components/WorkCategories';
 
 // CODE TO CREATE THE HEADER START //
 const Header = (props) => {
@@ -20,6 +21,13 @@ const Header = (props) => {
     const locationName = location.pathname;
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const [expanded, setExpanded] = useState(false);
+    const [ reloadRightColumn, setReloadRightColumn ] = useState(false);
+        
+    const resetWork = () => {
+        setIsOpen(!isOpen);
+        reloadRightColumn(true);
+    }
 
     const setPageTitle = (location)  => {
         let pageTitle = "";
@@ -65,16 +73,16 @@ const Header = (props) => {
                                     <Collapse isOpen={isOpen} navbar>
                                         <Nav className="me-auto" navbar>
                                             <NavItem>
-                                                <NavLink to="/">Home</NavLink>
+                                                <NavLink onClick={toggle} to="/">Home</NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink to="/about">About</NavLink>
+                                                <NavLink onClick={toggle} to="/about">About</NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink to="/work">Work</NavLink>
+                                                <NavLink onClick={resetWork} to="/work">Work</NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink to="/contact">Contact</NavLink>
+                                                <NavLink onClick={toggle} to="/contact">Contact</NavLink>
                                             </NavItem>
                                         </Nav>
                                     </Collapse>
