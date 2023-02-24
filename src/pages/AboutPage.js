@@ -1,7 +1,7 @@
 // IMPORTS //
 import React from 'react';
 import { Container, Row, Col, Modal } from 'reactstrap';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import parse from 'html-react-parser';
 import dinoPhoto   from  '../assets/images/matt_dino.png';
@@ -63,7 +63,24 @@ const AboutPage = () => {
         updateContent(text);
         console.log(content);
         console.log('The modal should be open');
-    } 
+    }
+
+    const tldrContent = useRef('');
+    const tldrIcon = useRef('');
+
+    const showTLDR = () => {
+        if(!tldrOpen){
+            tldrContent.current.className = "d-flex"
+            tldrIcon.current.className = "fa-solid fa-angle-down"
+        }
+        else {
+            tldrContent.current.className = "d-none"
+            tldrIcon.current.className = "fa-solid fa-angle-right"
+        };
+        settldrOpen(!tldrOpen);
+    };
+    //console.log('tldr Content is ' + tldrContent.current.className);
+    //console.log(tldrIcon.current.id);
 
     return(
         <HelmetProvider context={helmetContext}>
@@ -82,8 +99,8 @@ const AboutPage = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <h4 className="italic">TL:DR <span className="d-md-none d-inline"><i className="fa-solid fa-angle-right" style={{color: "green"}}></i></span></h4>
-                                    <Col style={{display: "none"}}>
+                            <h4 className="italic">TL:DR <span className="d-inline d-md-none"><i ref={tldrIcon} className="fa-solid fa-angle-right" onClick = {() => showTLDR()}></i></span></h4>
+                                    <div ref={tldrContent} className="d-none d-md-flex">
                                     <div id='libra' className="tldr-icon" >
                                         <img src={libra} className='tldr-image' onClick={onClick => TldrModalZodiac()} alt='Libra scales'/>
                                     </div>
@@ -96,7 +113,7 @@ const AboutPage = () => {
                                     <div id='timCurry'  className="tldr-icon" onClick={onClick => TldrModalTim()}>
                                         <img src={tim_curry} className='tldr-image' alt='Tim Curry from Clue'/><br />
                                     </div>
-                                    </Col>
+                                    </div>
                         </Row>
                     </Col>
                     <Col sm={12} md={6} className ="order-sm-2 order-md-1">
