@@ -61,37 +61,42 @@ const Header = (props) => {
             }
             else {
                 return(
+                    <>
                     <header>
                     <Container>
                         <Row style={{width: "100%"}}>
                             <Col className="d-sm-9 d-md-6 d-flex justify-content-start">
                                 <h1>{pageTitle}</h1>
                             </Col>
-                            <Col className="d-sm-3 d-md-6 d-flex justify-content-center">
-                                <Navbar expand="md">
-                                    <NavbarToggler onClick={toggle} />
-                                    <Collapse isOpen={isOpen} navbar>
-                                        <Nav className="me-auto" navbar>
-                                            <NavItem>
-                                                <NavLink onClick={toggle} to="/">Home</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink onClick={toggle} to="/about">About</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink onClick={resetWork} to="/work">Work</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink onClick={toggle} to="/contact">Contact</NavLink>
-                                            </NavItem>
-                                        </Nav>
-                                    </Collapse>
-                                </Navbar>
-                            </Col>
                         </Row>
                     </Container>
                     </header>
-                )
+                    <Col className="navbar-placement d-sm-3 d-md-6 d-flex justify-content-center align-items-end">
+                    <i className="toggler fa-solid fa-angle-down" onClick={toggle}></i>
+                    <Navbar expand="md">                    
+                    <Collapse isOpen={isOpen} navbar>
+                        <Nav className="me-auto" navbar>
+                            <NavItem>
+                                <NavLink onClick={toggle} to="/">Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={toggle} to="/about">About</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={resetWork} to="/work">Work</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={toggle} to="/contact">Contact</NavLink>
+                            </NavItem>
+                            <NavItem>
+                            <i className="fa-solid fa-angle-up" onClick={toggle}></i>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+                </Col>
+                </>
+            )
             }
         }
         return (

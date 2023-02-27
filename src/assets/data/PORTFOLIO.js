@@ -1,6 +1,5 @@
  /* PORTFOLIO DEFINITION START */
    //Items in the portfolio are stored in the PORTFOLIO array//
-   //Portfolio items are defined by a class of PORT they will be rendered into the modal on the website//
 
 /* IMPORT PHOTOS FOR THE PORTFOLIO OBJECTS */   
 import creatureFeature from '../../assets/images/portfolio/creaturefeature.jpg';

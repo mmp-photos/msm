@@ -36,6 +36,7 @@
     --mobile-only-move-right: 0em;
     --header-height: 8em;
     --first-button-padding: .75em;
+    --show-on-mobile: none;
 
     /* TEXT AND HEADER SIZES */
     --h1-font-size: 4em;
@@ -51,7 +52,7 @@
     --work-button-fonts: 3em;
 
     /* HEADER VARIABLES */
-    --nav-text-top: .90em;
+    --nav-text-top: 1.15em;
     --nav-display: block;
     --nav-margin-top: 20em;
 
@@ -93,6 +94,7 @@
     --mobile-only-move-right: -.75em;
     --header-height: 6em;
     --first-button-padding: 0px;
+    --show-on-mobile: block;
 
     /* SIZING VARIABLES */
     --profilePhoto: 120px;
@@ -114,7 +116,7 @@
     --work-button-fonts: 1.25em;
 
     /* HEADER VARIABLES */
-    --nav-text-top: 2.5em;
+    --nav-text-top: 1.24em;
     --nav-display: block;
     --nav-margin-top: 20em;
 
@@ -195,6 +197,48 @@
         color: var(--dark-blue);
     }
 /* END GLOBAL STYLES */
+
+/***** NAVIGATION STYLES *****/
+ .navbar-placement {
+    position: fixed;
+    right: 0px;
+    top:32px;
+    z-index: 3;
+    display: block;
+    background-color: var(--dark-blue);
+ }
+ .nav-item {
+    text-align: center;
+    font-size: var(--nav-text-top);
+    padding: .75em 1.75em;
+ }
+ .nav-item:last-of-type {
+    display: var(--show-on-mobile);
+    text-align: center;
+    font-size: var(--nav-text-top);
+    padding: .2em 1.75em;
+    background-color: var(--dark-blue);
+    color: var(--yellow-highlight);
+    font-size: .7em;
+ }
+ .toggler {
+    display: var(--show-on-mobile);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 70px;
+    padding-right: 25px;
+    padding-top: 6px;
+    min-height: 30px;
+    background-color: var(--dark-blue);
+    color: var(--yellow-highlight);
+    text-align: right;
+    border-bottom-left-radius: 30px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+ }
+/* END NAVIGATION STYLES */
 
 /***** HEADER STYLES ******/
     header {
@@ -386,12 +430,32 @@
   }
   
   .modal-image {
-    max-width: 95%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 12px;
   }
-
+  .modal-content {
+    border-radius: 0px;
+    max-width: 95%;
+  }
+  .modal-close {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    color: var(--white);
+    font-size: 1.5em;
+  }
+  .modal-art-credit {
+    font-family: var(--sans-fonts);
+    font-size: .5em;
+    text-align: right;
+    padding-right: 12px;
+    padding-left: 35px;
+  }
+  .modal-text-padding {
+    padding: 1.5em;
+  }
 /***** IMAGE STYLES ******/
   img.contact-photo {
     width: var(--contactPhoto);

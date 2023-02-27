@@ -4,12 +4,15 @@ import { Container, Row, Col, Modal } from 'reactstrap';
 import { useState, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import parse from 'html-react-parser';
-import dinoPhoto   from  '../assets/images/matt_dino.png';
-import tim_curry   from  '../assets/images/tim_curry.jpg';
-import infj        from  '../assets/images/infj.svg';
-import libra       from  '../assets/images/libra.svg';
-import libra2      from  '../assets/images/libra2.svg';
-import HufflePuff  from  '../assets/images/hufflepuff.png';
+import dinoPhoto      from  '../assets/images/matt_dino.png';
+import tim_curry      from  '../assets/images/tim_curry.jpg';
+import tim_curry2     from  '../assets/images/tim_curry2.png';
+import infj           from  '../assets/images/infj.svg';
+import infj2          from  '../assets/images/mandela.jpg';
+import libra          from  '../assets/images/libra.svg';
+import libra2         from  '../assets/images/libra_modal_open.jpg';
+import HufflePuff     from  '../assets/images/hufflepuff.png';
+import HufflePuff2    from  '../assets/images/hufflepuff2.png';
 
 const helmetContext = {};
 
@@ -23,10 +26,13 @@ const AboutPage = () => {
     const TldrModalMBTI = () => {
         setLoginModalOpen(true);
         let text = {
-                title: 'Myers Briggs Type Indicator',
+                title: 'MBTI - INFJ',
                 text:`<p>Ahhh... Myers-Briggs Type Indicator... the zodiac according to HR managers.  So many jobs will require some sort of personality test upon starting.  I don't need to be test... again. I will tell you right up front that I am an INFJ.  We are the rarest, but probably the most vocal of the MBTI designations.  We are the Vegans of office psychology.</p>
                 <p>Of course, according to the wealth of INFJ content available online that might be the most you'll ever be able to find out us.  Part of that might be because the example of the Ur-INFJ provided is Nelson Mandela.  That's a lot to live up to.</p>`,
-                image: infj};
+                image: infj2,
+                artCredit: 'Daniel Arrhakis',
+                artLink: 'https://www.flickr.com/photos/arrhakis/'
+            };
         updateContent(text);
         //console.log(content);
         //console.log('The modal should be open');
@@ -37,7 +43,10 @@ const AboutPage = () => {
         let text = {
             title: 'Libra',
             text:'<p>The seventh sign of the zodiac Libra is represented by a set of scales.  Life for Libras is all about balance. </p> <p>My first boss once described me with a gesture, his hand sweeping in a smooth, straight line.  "The keel of the ship" is what he called me.  Smooth sailing, tranquil and balanced.</p>',
-            image: libra2};
+            image: libra2,
+            artCredit: '',
+            artLink: 'https://www.flickr.com/photos/wyldkyss/'
+            };
         updateContent(text);
         console.log(content);
         console.log('The modal should be open');
@@ -48,7 +57,10 @@ const AboutPage = () => {
         let text = {
             title: 'Hufflepuff House',
             text:"<p>It's a popluar belief that Hufflepuffs have somehow failed to show courage, cleverness, or cunning. Hufflepuffs know better!</p><p> The Sorting Hat doesn't look for a lack of traits.  Puffs are as daring, ambitious, and bright as their classmates.  But their DEFINING trait is fundamental fairness.  It's hard work and a commitment to treat everyone equally that mark badgers.  Hufflepuff is also the most inclusive of the Hogwarts Houses.  They won't turn away anyone who shares their inherent decency.</p><p>There will never be a more faithful friend than a HufflePuff.  They will ALWAYS be on your side - when you're right.</p>",
-            image: HufflePuff};
+            image: HufflePuff2,
+            artCredit: 'WyldKyss',
+            artLink: 'https://www.flickr.com/photos/wyldkyss/'
+            }
         updateContent(text);
         console.log(content);
         console.log('The modal should be open');
@@ -59,7 +71,10 @@ const AboutPage = () => {
         let text = {
             title: 'Tim Curry Test',
             text:'<p>Knowing what movie someone recognizes Tim Curry from tells you a lot about them.  I will relieve the antici...</p> <p>...</p> <p>... pation and tell you that I will always think of Tim Curry as the butler from Clue. If I am being honest I probably first saw him as the devil in Legend.  But the character design really removed the opportunity to recognize him in other roles.</p> <p>I <span class="text-italics">wish</span> I was cool enough to say that it was Rocky Horror Picture Show where I discovered him.  However Frank-n-Furter was well into my future when I helped my classmates at Collins Living Learning Center put on a production in our dining hall.</p>',
-            image: tim_curry};
+            image: tim_curry2,
+            artCredit: 'Thomas Autumn',
+            artLink: 'https://www.flickr.com/photos/29457092@N07/'
+            };
         updateContent(text);
         console.log(content);
         console.log('The modal should be open');
@@ -119,7 +134,7 @@ const AboutPage = () => {
                     <Col sm={12} md={6} className ="order-sm-2 order-md-1">
                         <article>
                             <h1 className="serif italic flush-right margin-2y">Hi, I'm Matt!</h1>
-                            <h3 className="flush-right">a Front End Web Developer, <br />
+                            <h3 className="flush-right">I'm a Frontend Web Developer, <br />
                                 Client Communications specialist,<br/> 
                                 and patterned shirt afficiando.</h3>
 
@@ -160,11 +175,14 @@ const AboutPage = () => {
             </main>
 
     <Modal className="about2-modal" 
-        isOpen={loginModalOpen}
-        style={{fontSize: "3em", color: "green"}}>
-
+        isOpen={loginModalOpen}>
         <img className="modal-image" src={content.image} alt='from the modal' />
-        {parse('<div>' + content.text + '</div>')}
+        <i className="modal-close fa-solid fa-square-xmark" onClick = {() => setLoginModalOpen()}></i>
+        {content.artCredit != '' ? <p className="modal-art-credit">Credit: <a href={content.artLink} target="new">{content.artCredit}</a></p> : null}
+        <div className="modal-text-padding">
+            <h1>{content.title}</h1>
+            {parse('<div>' + content.text  + '</div>')}
+        </div>
     </Modal>
     </HelmetProvider>
     )
