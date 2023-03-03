@@ -11,16 +11,16 @@ const Footer = () => {
                     <Link to="/"><h4>matthew mayer</h4></Link>
                 </Col>
                 <Col className="d-flex justify-content-start align-items-center col-xs-6 col-md-4">
-                    <a href="https://www.instagram.com/mmp_photos/" alt='LinkedIN'>
+                    <a href="https://www.instagram.com/mmp_photos/" alt='Instagram' target="new">
                         <i className='fa fa-instagram instagram'></i>
                     </a>
-                    <a href="https://codepen.io/matthew-mayer" alt='LinkedIN'>
+                    <a href="https://codepen.io/matthew-mayer" alt='CodePen' target="new">
                         <i className="fa-brands fa-codepen"></i>
                     </a>
-                    <a href="https://github.com/mmp-photos" alt='LinkedIN'>
+                    <a href="https://github.com/mmp-photos" alt='GitHub' target="new">
                         <i className='fa fa-github'></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/matthew-s-mayer/" alt='LinkedIN'>
+                    <a href="https://www.linkedin.com/in/matthew-s-mayer/" alt='LinkedIN' target="new">
                         <i className="fa fa-linkedin"></i>
                     </a>
                 </Col>

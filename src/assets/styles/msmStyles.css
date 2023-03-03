@@ -25,12 +25,13 @@
     --profilePhoto: 200px;
     --contactPhoto: 200px;
     --interior-photo-scale: 75%;
+    --mobile-100: 500px;
     
     /* SPACING VARIABLES */
     --main-padding: 9em 0em 12em 0em;
     --article-padding: 6em .5em 4em 16em;
     --photo-margin: 2em;
-    --interior-photo-padding: 0em 0em 3.25em 0em;
+    --interior-photo-padding: 0em 0em 1.25em 0em;
     --mobile-only-clear: none;
     --mobile-only-padding-top: 0em;
     --mobile-only-move-right: 0em;
@@ -99,7 +100,8 @@
     /* SIZING VARIABLES */
     --profilePhoto: 120px;
     --contactPhoto: 200px;
-    --interior-photo-scale: 65%;
+    --interior-photo-scale: 100%;
+    --mobile-100: 100%;
 
     /* TEXT AND HEADER SIZES */
     --h1-font-size: 2.5em;
@@ -151,14 +153,13 @@
     }
     a {
         text-decoration: none;
-        color: black;
+        color: var(--dark-blue);
     }
     a:hover {
-        text-decoration: none;
         color: var(--light-blue);
     }
     a:active {
-        color: var(--dark-blue);
+        color: var(--light-blue);
     }
     .container {
         max-width: 100%;
@@ -296,6 +297,21 @@
         padding: var(--main-padding);
         margin-left: 0px;
     }
+    article {
+      text-align: justify;
+    }
+    article > * a {
+      text-decoration: none;
+      color: var(--light-blue);
+      font-weight: bold;
+    }
+    article > * a:hover {
+        text-decoration: underline;
+        color: var(--dark-blue);
+    }
+    article > * a:active {
+        color: var(--dark-blue);
+    }
     main > * button {
         border-color: transparent;
         background-color: Transparent;
@@ -313,18 +329,18 @@
         color: var(--light-blue);
     }
     dl {
-        display: block;
+        max-width: 100%;
+        display: grid;
+        grid-template: "a a" auto;
+        grid-gap: 0px;
     }
     dt {
-        float: left;
         text-align: right;
         font-weight: bold;
-        width: 6.5em;
-        padding: .15em;
     }
     dd {
         text-align: left;
-        padding: .15em;
+        padding-left: 12px;
     }
     h2 {
         font-family: var(--serif-fonts);
@@ -337,6 +353,7 @@
         font-size: var(--h3-font-size);
         font-family: var(--sans-fonts);
         margin-bottom: 3em;
+        line-height: var(--h3-font-size);
       }
     h4 {
     font-size: var(--h3-font-size);
@@ -389,7 +406,18 @@
         background-color: var(--light-blue);
         color: var(--white);
         background-image: none;   
-    } 
+    }
+    button.portfolio {
+      background-color: transparent;
+      border-color: transparent;
+      overflow: hidden;
+      margin-top: 100px;
+      min-width: 100%;
+      max-height: 100%
+    }
+    button.portfolio:hover {
+      cursor: pointer;
+    }
     div.tldr-icon {
         background-color: var(--dark-blue);
         border-radius: 20px;
@@ -399,6 +427,7 @@
         justify-content: center;
         align-items: center;
         margin-right: .35em;
+        cursor: pointer;
     }
     #home-media {
         overflow: hidden;
@@ -410,6 +439,14 @@
     }
     .navbar-toggler {
         margin: 0 auto;
+    }
+    .portfolio-tech-tips-in {
+      animation: mainFadeIn 1.5s forwards;
+      color: var(--light-blue);
+    }
+    .portfolio-tech-tips-out {
+      animation: mainFadeOut 1.5s forwards;
+      color: var(--light-blue);
     }
     .skills-box {
         background-color: var(--dark-blue);
@@ -509,6 +546,10 @@
     padding: var(--interior-photo-padding);
     float: var(--mobile-float-right);
   }
+  img.portfolio{
+    width: var(--mobile-100);
+    object-fit: contain;
+  }
   .tldr-image {
     max-height: 65px;
     max-width: 65px;
@@ -519,6 +560,25 @@
     width: 75px;
     max-height: 75px;
     margin-bottom: 4px;
+  }
+  .portfolio-icons {
+    max-width: 40px;
+    max-height: 40px;
+    margin: 4px;
+  }
+  .portfolio-thumbnails {
+    width: 75px;
+    max-height: 75px;
+    margin: 4px;
+  }
+  .portfolio-thumbnails:hover {
+    width: 75px;
+    max-height: 75px;
+    margin: 4px;
+    border-color: var(--light-blue);
+    border-style: solid;
+    border-width: 4px;
+    cursor: pointer;
   }
 /* END IMAGE STYLES */
 
@@ -565,5 +625,21 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+  }
+  @keyframes mainFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes mainFadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }

@@ -28,27 +28,35 @@ const Header = (props) => {
         setIsOpen(!isOpen);
         reloadRightColumn(true);
     }
-
+    const pathname = String(location.pathname);
+    const newLocation = pathname.split("/");
+    const finalLocation = newLocation[1];
     const setPageTitle = (location)  => {
         let pageTitle = "";
         switch(location){
-            case '/about':
+            case 'about':
                 pageTitle = 'About';
                 return(
                     pageTitle
                 );
-            case '/work':
+            case 'work':
                 pageTitle = 'Work';
                 return(
                     pageTitle
                 );
-            case '/contact':
+            case 'contact':
                 pageTitle = 'Contact';
                 return(
                     pageTitle
                 );            
-            default:
+                case 'portfolio':
+                    pageTitle = 'Portfolio';
+                    return(
+                        pageTitle
+                    );            
+                default:
                 pageTitle = "noHeader";
+                console.log(location);
                 return(
                     pageTitle
                 )
@@ -101,7 +109,7 @@ const Header = (props) => {
         }
         return (
                <>
-                {defineNav(setPageTitle(locationName))}
+                {defineNav(setPageTitle(finalLocation))}
                </>
         );
     };

@@ -48,13 +48,13 @@ const ContactPage = () => {
                             onClick={() => downloadResume()}
                         >
                             <i className="fa fa-file-pdf large-text"></i>
-                            <p className="half-size-text">Resume</p>
+                            <p className="sans half-size-text">Resume</p>
                         </button>
                         <button className="contact"
                             onClick={() => sendMail()}
                         >
                             <i className="fa-regular fa-envelope large-text"></i>
-                            <p className="half-size-text">matt@msm.codes</p>
+                            <p className="sans half-size-text">matt@msm.codes</p>
                         </button>
                     </Col>
                     <Col className="d-none d-lg-block">

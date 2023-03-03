@@ -21,7 +21,8 @@ function App() {
             <Route path="/contact" element = {<ContactPage />} />
             <Route path="/about" element = {<AboutPage />} />
             <Route path="/work" element = {<WorkPage />} />
-            <Route path="/portfolio/:id" element = {<PortfolioPage />} />
+            <Route path="/portfolio/" element = {<PortfolioPage />} />
+            <Route path="/portfolio/:portfolioID" element = {<PortfolioPage />} />
         </Routes>
       <Footer />
       </>

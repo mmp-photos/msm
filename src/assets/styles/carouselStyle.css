@@ -24,6 +24,7 @@
     align-items: center;
     margin-left: 0px;
     margin-bottom: 12px;
+    z-index: 0;
 }
 
 .slide-prev {
@@ -39,8 +40,12 @@
     margin-left: 12px;
     background-color: var(--light-blue);
     color: var(--yellow-highlight);
+    z-index: 3;
 }
-
+.slide-prev:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
 .slide-next {
     display: flex;
     align-items: center;
@@ -54,4 +59,8 @@
     margin-right: 12px;
     background-color: var(--light-blue);
     color: var(--yellow-highlight);
+}
+.slide-next:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }

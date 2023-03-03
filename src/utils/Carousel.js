@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../assets/styles/carouselStyle.css';
 import developer01 from '../assets/images/portfolio/developer01.png';
 import developer02 from '../assets/images/portfolio/developer02.png';
@@ -9,29 +10,65 @@ import content01 from '../assets/images/portfolio/content01.png';
 import content02 from '../assets/images/portfolio/content02.png';
 
 const Carousel = (slideDeck) => {
-    console.log('Need to committ');
     // DETERMINE THE CAROUSEL IMAGES TO USE BASED ON THE URL //
-    let developerSlides = [developer01, developer02];
+    let developerSlides = [{ image:  developer01, 
+                             params: "googlyPress",
+                             order: 0
+                            },
+                           { image:  developer02, 
+                             params: "angerGenerator",
+                             order: 1
+                            }];
     let marketerSlides = [marketer01, marketer02];
     let contentSlides = [content01, content02];
+    const navigate = useNavigate();
 
     let slides =[];
 
     switch(slideDeck.slides.slides){
         case "developer":{
-            slides.push(developer01, developer02);
+            slides.push({ image:  developer02, 
+                params: "googlyPress",
+                order: 0
+               },
+              { image:  developer01, 
+                params: "angerGenerator",
+                order: 1
+               });
+            //console.log(slides);
             break;
         }
         case "marketer": {
-            slides.push(marketer01, marketer02);
+            slides.push({ image:  marketer01, 
+                params: "smallGods",
+                order: 0
+               },
+              { image:  marketer02, 
+                params: "termsAndConditions",
+                order: 1
+               });
             break;
         }
         case "content":{
-            slides.push(content01, content02);
+            slides.push({ image:  content02, 
+                params: "gatsbyCologne",
+                order: 0
+               },
+              { image:  content01, 
+                params: "giantsOfMassAve",
+                order: 1
+               });
             break;
         }
         default:{
-            slides.push(developer01, developer02);
+            slides.push({ image:  developer02, 
+                params: "googlyPress",
+                order: 0
+               },
+              { image:  developer01, 
+                params: "angerGenerator",
+                order: 1
+               });
             break;
         }
     };
@@ -40,7 +77,8 @@ const Carousel = (slideDeck) => {
     const carouselBackground = useRef();
 
     // NAVIGATE TO PREVIOUS SLIDE //
-    const prevSlide = (slideLength) => {
+    const prevSlide = (e, slideLength) => {
+        e.stopPropagation();
         let total = slideLength - 1;
         const newTotal = current === 0 ? total : current - 1;
         //console.log(newTotal)
@@ -48,19 +86,24 @@ const Carousel = (slideDeck) => {
     };
 
     // NAVIGATE TO PREVIOUS SLIDE //
-    const nextSlide = (slideLength) => {
+    const nextSlide = (e, slideLength) => {
+        e.stopPropagation();
         let total = slideLength - 1;
         const newTotal = current === total ? 0 : current + 1;
         //console.log(newTotal)
         setCurrent(newTotal);
     };
 
+    const loadPortfolio = (item) =>{
+
+    }
+
     // RETURN THE CAROUSEL ELEMENT //
     return (
         <>
-            <div ref={carouselBackground} className='main-slide' style={{backgroundImage: `url(${slides[current]})`}}>
-                <div className="slide-prev" onClick = {() => prevSlide(slides.length)}><i className="fa-solid fa-angle-left"></i></div>
-                <div className="slide-next" onClick = {() => nextSlide(slides.length)}><i className="fa-solid fa-angle-right"></i></div>
+            <div role="button" ref={carouselBackground} className='main-slide' onClick={() => navigate(`/portfolio/${slides[current].params}`)} style={{backgroundImage: `url(${slides[current].image})`}}>
+                <div className="slide-prev" onClick = {(event) => prevSlide(event , slides.length)}><i className="fa-solid fa-angle-left"></i></div>
+                <div className="slide-next" onClick = {(event) => nextSlide(event, slides.length)}><i className="fa-solid fa-angle-right"></i></div>
             </div>
         </>
     );

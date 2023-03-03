@@ -103,7 +103,7 @@ export const workHumor = () => {
     return(
         <>
             <Carousel slides={{slides: slideDeck}}/>
-            <h2>Humor Writer</h2>
+            <h2>Content &amp; Humor Writer</h2>
             <p className="sans">Being funny isn't as easy as comedians make it look.  Humor - especially satire requires a delicate touch.</p>
             <p className="sans">I can help punch up existing material.  Give your copy a careful rewrite to bring some targeted levity to your work.
                 With influences from Don Knotts to Jon Stewart I can span the gamut of styles to craft a message and voice that is a specific fit to your need
