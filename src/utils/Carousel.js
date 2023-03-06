@@ -11,16 +11,6 @@ import content02 from '../assets/images/portfolio/content02.png';
 
 const Carousel = (slideDeck) => {
     // DETERMINE THE CAROUSEL IMAGES TO USE BASED ON THE URL //
-    let developerSlides = [{ image:  developer01, 
-                             params: "googlyPress",
-                             order: 0
-                            },
-                           { image:  developer02, 
-                             params: "angerGenerator",
-                             order: 1
-                            }];
-    let marketerSlides = [marketer01, marketer02];
-    let contentSlides = [content01, content02];
     const navigate = useNavigate();
 
     let slides =[];
@@ -93,10 +83,6 @@ const Carousel = (slideDeck) => {
         //console.log(newTotal)
         setCurrent(newTotal);
     };
-
-    const loadPortfolio = (item) =>{
-
-    }
 
     // RETURN THE CAROUSEL ELEMENT //
     return (

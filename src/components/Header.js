@@ -9,25 +9,16 @@ import {
     Col,
     Nav,
     NavItem,
-    NavbarToggler,
     Collapse
 } from 'reactstrap';
 import { useLocation } from 'react-router-dom';
-import { workMain } from '../components/WorkCategories';
 
 // CODE TO CREATE THE HEADER START //
 const Header = (props) => {
     const location = useLocation();
-    const locationName = location.pathname;
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-    const [expanded, setExpanded] = useState(false);
-    const [ reloadRightColumn, setReloadRightColumn ] = useState(false);
         
-    const resetWork = () => {
-        setIsOpen(!isOpen);
-        reloadRightColumn(true);
-    }
     const pathname = String(location.pathname);
     const newLocation = pathname.split("/");
     const finalLocation = newLocation[1];
@@ -91,7 +82,7 @@ const Header = (props) => {
                                 <NavLink onClick={toggle} to="/about">About</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink onClick={resetWork} to="/work">Work</NavLink>
+                                <NavLink onClick={toggle} to="/work">Work</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={toggle} to="/contact">Contact</NavLink>

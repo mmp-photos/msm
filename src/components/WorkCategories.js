@@ -19,7 +19,7 @@ export const workMain = (workType) => {
         <div style={{ backgroundColor: "#43598a", borderRadius: "30px", height: "300px", overflow: "hidden"}}>
         <Row className="negative-ten-degrees-left">
             <Col>
-                <img className="sliding-icons"s src={iconAdobeAI} alt='Adobe Illustrator' />
+                <img className="sliding-icons" src={iconAdobeAI} alt='Adobe Illustrator' />
             </Col>
             <Col>
                 <img className="sliding-icons" src={iconAdobePS} alt='Adobe Photoshop' />

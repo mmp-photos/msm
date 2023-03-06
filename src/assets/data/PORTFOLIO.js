@@ -7,7 +7,7 @@
 import developer01 from '../images/portfolio/developer01.png';
 import developer02 from '../images/portfolio/developer02.png';
 import marketer02 from '../images/portfolio/marketing02.png';
-import marketer01 from '../images/portfolio/marketing01.png';
+//import marketer01 from '../images/portfolio/marketing01.png';
 import content01 from '../images/portfolio/content01.png';
 import content02 from '../images/portfolio/content02.png';
 import smallGods01 from '../images/portfolio/smallGods01.jpg';
@@ -25,17 +25,17 @@ import Fringe03    from '../images/portfolio/UnholyPoster.png';
  import iconReact      from '../images/logos/react-2.svg';
  import iconHTML       from '../images/logos/html-1.svg';
  import iconCss3       from '../images/logos/css-3.svg';
- import iconMongoDB    from '../images/logos/mongodb-icon-1.svg';
- import iconMySQL      from '../images/logos/mysql-3.svg';
+ //import iconMongoDB    from '../images/logos/mongodb-icon-1.svg';
+ //import iconMySQL      from '../images/logos/mysql-3.svg';
  import iconBoostrap   from '../images/logos/bootstrap-5-1.svg';
  import iconJavascript from '../images/logos/logo-javascript.svg';
- import iconPhp        from '../images/logos/php-1.svg';
- import iconNode       from '../images/logos/nodejs-icon.svg';
+ //import iconPhp        from '../images/logos/php-1.svg';
+ //import iconNode       from '../images/logos/nodejs-icon.svg';
  import iconFacebook   from '../images/logos/facebook_logo.svg';
- import iconInstagram  from '../images/logos/instagram_logo_new.svg';
+ //import iconInstagram  from '../images/logos/instagram_logo_new.svg';
  import iconYouTube    from '../images/logos/youtube.svg';
- import iconTwitter    from '../images/logos/twitter.svg';
- import iconPinterest  from '../images/logos/pinterest.svg';
+ //import iconTwitter    from '../images/logos/twitter.svg';
+// import iconPinterest  from '../images/logos/pinterest.svg';
 /*END ICON IMPORT*/
 
 export const PORTFOLIO = [
@@ -56,7 +56,7 @@ export const PORTFOLIO = [
         role: 'Developer and Web Designer',
         status: 'Ongoing project: routinely updated.',
         description: `Website development to showcase the company's books and drive traffic to their products on Amazon`,
-        content: '<p>Googly Press creates "Happy Little Books" and sells them through Amazon\'s Kindle Direct Publishing platform.</p><p>The company needs a central location to list their books and embed affilate links to help generate passive income.  My intention in creating the site was to keep the friendly feeling of the products and organize them in a way that makes them easy to find and purchase.</p>'
+        content: `<p>Googly Press creates "Happy Little Books" and sells them through Amazon's Kindle Direct Publishing platform.</p><p>The company needs a central location to list their books and embed affilate links to help generate passive income.  My intention in creating the site was to keep the friendly feeling of the products and organize them in a way that makes them easy to find and purchase.</p>`
     },
     {
         id: 1,
@@ -73,7 +73,7 @@ export const PORTFOLIO = [
         role: 'Developer, Evil Mastermind',
         status: 'In development',
         description: 'To use existing public APIs to sow chaos and create unexpected mashups.',
-        content: '<p>The geek anger generator is an exercise that I devised mostly to explore and use existing public APIs.</p>  <p>The first project attributed random Simpson\'s quotes to random Game of Thrones characters.  I enjoyed styling it using publicly available fonts and appropriate colors.  The clouds were adapted from an animation I found on <a href="https://codepen.io/Mark_Bowley/pen/LYZEBq">CodePen</a>.</p>'
+        content: `<p>The geek anger generator is an exercise that I devised mostly to explore and use existing public APIs.</p>  <p>The first project attributed random Simpson's quotes to random Game of Thrones characters.  I enjoyed styling it using publicly available fonts and appropriate colors.  The clouds were adapted from an animation I found on <a href="https://codepen.io/Mark_Bowley/pen/LYZEBq">CodePen</a>.</p>`
     },
     {
         id: 2,
@@ -89,7 +89,7 @@ export const PORTFOLIO = [
         role: 'Designer, Marketing Coordinator',
         status: 'Completed',
         description: 'Advertise and increase the audience for the productions of an Indianapolis theatre company',
-        content: '<p>I have partnered with MK Productions to promote a few of their theatre endeavors.  MK is an Indianapolis based theatre company that specializes in new comedies told from a woman\s point of view.</p><p>The first project I worked on was <span className="italic">Unholy Trinity</span>.  The play won a juried panel to be included in IndyFringe\s DivaFest 2018.  The story explores the relationship between a woman\'s dissocation of her Mind, Heart, and Body - each personified into her own character.</p><p>For marketing I chose to highlight the ensemble nature of the piece and underline the comedic tone by referencing the 1980s John Hughes movies that so clearly influenced the script.  That paired with a strong social media marketing campaign helped sell out all 3 performances.</p><p>MK\'s entry into the 10 Minute Play Festival was called <span className="italic">Terms and Conditions</span>.  It is about a man who purchases a robot to be his girlfriend. In addition to the iTunes-esque acceptance screen I had to create a logo for the robotics company, Sirilicous.</p><p>I wanted the artwork to convey a few messages.  Firstly the idea of the female robot as property, and also the ease with which people will accept terms without having made an effort to understand them. Sadly the main character agreed to them rather cavalierly, and that will be his undoing.</p>'
+        content: `<p>I have partnered with MK Productions to promote a few of their theatre endeavors.  MK is an Indianapolis based theatre company that specializes in new comedies told from a woman's point of view.</p><p>The first project I worked on was <span className="italic">Unholy Trinity</span>.  The play won a juried panel to be included in IndyFring's DivaFest 2018.  The story explores the relationship between a woman's dissocation of her Mind, Heart, and Body - each personified into her own character.</p><p>For marketing I chose to highlight the ensemble nature of the piece and underline the comedic tone by referencing the 1980s John Hughes movies that so clearly influenced the script.  That paired with a strong social media marketing campaign helped sell out all 3 performances.</p><p>MK's entry into the 10 Minute Play Festival was called <span className="italic">Terms and Conditions</span>.  It is about a man who purchases a robot to be his girlfriend. In addition to the iTunes-esque acceptance screen I had to create a logo for the robotics company, Sirilicous.</p><p>I wanted the artwork to convey a few messages.  Firstly the idea of the female robot as property, and also the ease with which people will accept terms without having made an effort to understand them. Sadly the main character agreed to them rather cavalierly, and that will be his undoing.</p>`
     },
     {
         id: 3,
@@ -137,7 +137,7 @@ export const PORTFOLIO = [
         role: 'Writer and Satisfied Customer',
         status: 'Completed',
         description: 'Trying to express the essence of a fine cologne and entice others to purchase it',
-        content: '<h2>Immortal Perfumes Gatsby</h2><h3>from their Dead Writers collection</h3><p>Notes: Lime, tobacco, vegan ambergris, tonka bean, juniper, white patchouli, champagne, grapefruit</p><p>Bright sunshine and fruit is an unexpected start to something that should be synonymous with nightlife.  Instead it\'s freshly laundered linen shirts and polo jerseys drying in the breeze of a West Egg morning.  The jazz age equivalent of brunch in the Hamptons.</p>The tobacco is a familiar element that provides depth and the type of intimacy only found at large parties.  Then as it wears on and winds down it changes.  Just as I\'m certain often happened at Gatsby\'s house, the gin takes over. In the end leaving a lingering sense of a gentleman, impecably dressed with a light, clovey cigarette in one hand and a cut crystal tumbler in the other.<p>I\'m very satisfied with the cologne.  It did arrive in a sample so small as to make magazine insert cards seem generous but it is something that I will certainly buy a small bottle of.  This may not be an everyday scent but for those occasions when it would be right - it would actually be perfect.</p>'
+        content: `<h2>Immortal Perfumes Gatsby</h2><h3>from their Dead Writers collection</h3><p>Notes: Lime, tobacco, vegan ambergris, tonka bean, juniper, white patchouli, champagne, grapefruit</p><p>Bright sunshine and fruit is an unexpected start to something that should be synonymous with nightlife.  Instead it's freshly laundered linen shirts and polo jerseys drying in the breeze of a West Egg morning.  The jazz age equivalent of brunch in the Hamptons.</p>The tobacco is a familiar element that provides depth and the type of intimacy only found at large parties.  Then as it wears on and winds down it changes.  Just as I'm certain often happened at Gatsby's house, the gin takes over. In the end leaving a lingering sense of a gentleman, impecably dressed with a light, clovey cigarette in one hand and a cut crystal tumbler in the other.<p>I'm very satisfied with the cologne.  It did arrive in a sample so small as to make magazine insert cards seem generous but it is something that I will certainly buy a small bottle of.  This may not be an everyday scent but for those occasions when it would be right - it would actually be perfect.</p>`
     }
 ];
 

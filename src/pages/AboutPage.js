@@ -180,7 +180,7 @@ const AboutPage = () => {
         isOpen={loginModalOpen}>
         <img className="modal-image" src={content.image} alt='from the modal' />
             <i className="modal-close fa-solid fa-square-xmark" onClick = {() => setLoginModalOpen()}></i>
-        {content.artCredit != '' ? <p className="modal-art-credit">Credit: <a href={content.artLink} target="new">{content.artCredit}</a></p> : null}
+        {content.artCredit !== '' ? <p className="modal-art-credit">Credit: <a href={content.artLink} target="new">{content.artCredit}</a></p> : null}
         <div className="modal-text-padding">
             <h1>{content.title}</h1>
             {parse('<div>' + content.text  + '</div>')}
