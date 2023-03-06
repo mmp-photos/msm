@@ -18,6 +18,10 @@ const Header = (props) => {
     const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+
+    function reload(){
+        location.reload();
+    };
         
     const pathname = String(location.pathname);
     const newLocation = pathname.split("/");
@@ -82,7 +86,7 @@ const Header = (props) => {
                                 <NavLink onClick={toggle} to="/about">About</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink onClick={toggle} to="/work">Work</NavLink>
+                                <NavLink onClick={reload} to="/work/reload">Work</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={toggle} to="/contact">Contact</NavLink>
