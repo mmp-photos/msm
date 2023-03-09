@@ -47,9 +47,9 @@
     --footer-font-size: 1.95em;
     --footer-links: .75em;
     --homepage-buttons: 4em;
-    --large-text: 2.5em;
+    --large-text: .85em;
     --standard-size-text: 1em;
-    --half-size-text: .5em;
+    --half-size-text: .25em;
     --work-button-fonts: 3em;
 
     /* HEADER VARIABLES */
@@ -88,7 +88,7 @@
 
     /* SPACING VARIABLES */
     --main-padding: 6em 0em;
-    --article-padding: 2em .25em 6em 1.5em;
+    --article-padding: 2em 1.5em 6em 1.5em;
     --photo-margin: 2em;
     --mobile-only-clear: both;
     --interior-photo-padding: 0em 0em 0em 0em;
@@ -111,10 +111,10 @@
     --footer-font-size: 1em;
     --footer-links: .5em;
     --nav-items: 1.15em;
-    --homepage-buttons: 2.5em;
-    --large-text: 3em;
+    --homepage-buttons: 2em;
+    --large-text: 2em;
     --standard-size-text: 1em;
-    --half-size-text: .5em;
+    --half-size-text: .35em;
     --work-button-fonts: 1.25em;
 
     /* HEADER VARIABLES */
@@ -177,6 +177,9 @@
     }
     .bold{
         font-weight: 600;
+    }
+    .flex-full {
+      flex-basis: 1;
     }
     .flush-right {
         text-align: right;
@@ -297,7 +300,10 @@
         padding: var(--main-padding);
         margin-left: 0px;
     }
-    article {
+    article > p {
+      text-align: left;
+    }
+    article > p {
       text-align: justify;
     }
     article > * a {
@@ -329,7 +335,6 @@
         color: var(--light-blue);
     }
     dl {
-        max-width: 100%;
         display: grid;
         grid-template: "a a" auto;
         grid-gap: 0px;
@@ -365,7 +370,6 @@
     aside {
         display: block;
         background-color: var(--light-blue);
-        padding: 32px;
         border-radius: 30px;
         text-align: center;
     }
@@ -382,24 +386,27 @@
         margin: 12px;
         padding: 0px;
     }
+    .contact-details-box{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: var(--light-blue);
+      padding-top: 32px;
+      border-radius: 30px
+    }
     .button-contact-box{
-        display: flex;
-        flex-direction: var(--mobile-row);
-        justify-content: var(--start-to-center);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
     button.contact{
-        display: block;
+        justify-content: center;
+        align-items: center;
         width: 124px;
         height: 124px;
-        margin: 10px 10px 0px 0px;
-        padding-left: 4px;
+        margin: 10px;
+        padding: 0px;
         color: var(--light-blue);
-        padding-top: 12px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: var(--light-blue);
-        border-radius: 30px;
-        font-size: 1.5em;
         background-image: none;
     }
     button.contact:hover {
