@@ -69,12 +69,12 @@ const WorkPage = () => {
                     </button>
                 </Col>
             </Row>
-            <Row>
+{/*             <Row>
                 <Col sm={12} md={4} class="offset-md-4">
                     <h3>Choose a category to see examples of my work.</h3>
                 </Col>
             </Row>
-        </Container>
+ */}        </Container>
         </main>
         </HelmetProvider>
     )
