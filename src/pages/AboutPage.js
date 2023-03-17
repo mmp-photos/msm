@@ -22,7 +22,6 @@ const AboutPage = () => {
     let [content, updateContent] = useState({});
     const [ tldrOpen, settldrOpen ] = useState(false);
 
-
     const TldrModalMBTI = () => {
         setLoginModalOpen(true);
         let text = {
@@ -89,7 +88,7 @@ const AboutPage = () => {
             tldrIcon.current.className = "fa-solid fa-angle-down"
         }
         else {
-            tldrContent.current.className = "d-none"
+            tldrContent.current.className = "d-none slowFadeIn"
             tldrIcon.current.className = "fa-solid fa-angle-right"
         };
         settldrOpen(!tldrOpen);
@@ -113,21 +112,21 @@ const AboutPage = () => {
                                 </div>
                             </Col>
                         </Row>
-                        <Row style={{marginLeft: "12px"}}>
-                            <h4 className="italic">TL:DR <span className="d-inline d-md-none"><i ref={tldrIcon} className="fa-solid fa-angle-right" onClick = {() => showTLDR()}></i></span></h4>
+                        <Row id="tldr" style={{marginLeft: "12px"}}>
+                            <h4 className="italic">TL:DR <span className="d-inline d-md-none" ><i ref={tldrIcon} className="fa-solid fa-angle-right" onClick = {() => showTLDR()}></i></span></h4>
                                     <div ref={tldrContent} className="d-none d-md-flex">
-                                    <div id='libra' className="tldr-icon" >
-                                        <img src={libra} className='tldr-image' onClick={onClick => TldrModalZodiac()} alt='Libra scales'/>
-                                    </div>
-                                    <div  id='infj' className="tldr-icon" onClick={onClick => TldrModalMBTI()}>
-                                        <img src={infj} className='tldr-image' alt='Myers Briggs Type Indicator INFJ'/><br />
-                                    </div>
-                                    <div id='hufflepuff' className="tldr-icon" onClick={onClick => TldrModalPuff()}>
-                                        <img src={HufflePuff} className='tldr-image' alt='Hufflepuff House Crest'/><br />
-                                    </div>
-                                    <div id='timCurry'  className="tldr-icon" onClick={onClick => TldrModalTim()}>
-                                        <img src={tim_curry} className='tldr-image' alt='Tim Curry from Clue'/><br />
-                                    </div>
+                                        <div id='libra' className="tldr-icon" >
+                                            <img src={libra} className='tldr-image' onClick={onClick => TldrModalZodiac()} alt='Libra scales'/>
+                                        </div>
+                                        <div  id='infj' className="tldr-icon" onClick={onClick => TldrModalMBTI()}>
+                                            <img src={infj} className='tldr-image' alt='Myers Briggs Type Indicator INFJ'/><br />
+                                        </div>
+                                        <div id='hufflepuff' className="tldr-icon" onClick={onClick => TldrModalPuff()}>
+                                            <img src={HufflePuff} className='tldr-image' alt='Hufflepuff House Crest'/><br />
+                                        </div>
+                                        <div id='timCurry'  className="tldr-icon" onClick={onClick => TldrModalTim()}>
+                                            <img src={tim_curry} className='tldr-image' alt='Tim Curry from Clue'/><br />
+                                        </div>
                                     </div>
                         </Row>
                     </Col>
@@ -148,9 +147,9 @@ const AboutPage = () => {
                             <h2 className="italic">For fun...</h2>
                                 <p className="about">Fun and funny are things that I take seriously.  Make me laugh and you'll make a new friend.  It's as easy as that.</p>
                                 <p>My spouse Mary is a technical writer and author - writing comedies that crack me up.  She is a board member of the Indiana Writer's Center, and writes plays for the summer Fringe Fest.  We have so much fun producing and promoting her shows.  The biggest hit so far has been <span className="italic">Small Gods, Big Problems</span> which tells the story of the God of Small Pleasures potentially losing his job after his duties are all reassigned to Self Care.</p>
-                                <p>My best friend, as you might expect of any man, is my dog Henry.  He is an Australian Shepherd/Collie mix - nearly as hilarious as he is handsome  .  Usually I just describe him as an Aussie.  Owners of Aussies are seen as ambitious and enjoying a challenge.  Collie owners are typically thought to be trapped at the bottom of a well.</p>
+                                <p>My best friend, as you might expect of any man, is my dog Henry.  He is an Australian Shepherd/Collie mix - nearly as hilarious as he is handsome.  Usually I just describe him as an Aussie.  Owners of Aussies are seen as ambitious and enjoying a challenge.  Collie owners are typically thought to be trapped at the bottom of a well.</p>
                                 <p>Most of my PEOPLE friends are involved in the art or theatre communities in Indianapolis.  There's always a show or gallery opening to go to. I love celebrating their successes, but I secretly remember the days that I didn't need to buy a ticket just to see them.</p>
-                                <p>My other (somewhat) overlapping group of friends are people whom met I through work. Mostly those are people from the Apple Store.  They are my type of people.  In fact I fit in so well that I blend in at the store.  It is the only place Mary has ever had a problem spotting me in a crowd.</p>
+                                <p>My other (somewhat) overlapping group of friends are people whom I met through work. Mostly those are people from the Apple Store.  They are my type of people.  In fact I fit in so well that I blend in at the store.  It is the only place Mary has ever had a problem spotting me in a crowd.</p>
 
                             <h2  className="italic">Experience</h2>
                                 <p>I was working on websites when the most creative layout options were done with tables, and I've worked on publications when paste-up was done with actual paste.</p>

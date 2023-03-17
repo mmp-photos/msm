@@ -334,6 +334,9 @@
         font-style: italic;
         color: var(--light-blue);
     }
+    div.preload {
+      display: none;
+    }
     dl {
         display: grid;
         grid-template: "a a" auto;
@@ -605,6 +608,13 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     rotate: -10deg;
+  }
+  .easeIn {
+    transition: transform 30s ease-in;
+    animation: mainFadeIn 5.5s forwards;
+  }
+  .slowFadeIn {
+    animation: mainFadeIn 7.5s forwards;
   }
 
  @keyframes slide-left {

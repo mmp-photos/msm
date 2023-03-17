@@ -175,6 +175,20 @@ const HomePage = () => {
                     </button>
                 </Col>
             </Row>
+            <div className="preload">
+                <img src={bg01} alt="preload background" />
+                <img src={bg02} alt="preload background" />
+                <img src={bg03} alt="preload background" />
+                <img src={bg04} alt="preload background" />
+                <img src={bg05} alt="preload background" />
+                <img src={bg06} alt="preload background" />
+                <img src={bg07} alt="preload background" />
+                <img src={bg08} alt="preload background" />
+                <img src={bg09} alt="preload background" />
+                <img src={swirl} alt="preload background" />
+                <img src={swirlFaster} alt="preload background" />
+                <img src={swirlProhibitor} alt="preload background" />
+            </div>
         </main>
         </HelmetProvider>
     )

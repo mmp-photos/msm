@@ -78,7 +78,7 @@ const Header = (props) => {
                     <i className="toggler fa-solid fa-angle-down" onClick={toggle}></i>
                     <Navbar expand="md">                    
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="me-auto" navbar>
+                        <Nav className="me-auto easeIn" navbar>
                             <NavItem>
                                 <NavLink onClick={toggle} to="/">Home</NavLink>
                             </NavItem>
