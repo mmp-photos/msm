@@ -47,7 +47,7 @@ const HomePage = () => {
                 let i = Math.floor(Math.random() * bgImages.length);
                 let image = bgImages[i];
                 setBackground(image);
-            }, 1000);
+            }, 2000);
             return () => {
             clearInterval(intervalId);
             };

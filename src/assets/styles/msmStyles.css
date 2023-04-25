@@ -439,9 +439,12 @@
         margin-right: .35em;
         cursor: pointer;
     }
+    #mattHomepage {
+      z-index: 3;
+    }
     #home-media {
         overflow: hidden;
-        padding: 0px
+        padding: 0px;
     }
     nav{
         background-color: var(--background-color);
