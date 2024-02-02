@@ -14,7 +14,7 @@ const ContactPage = () => {
     };
 
     const sendMail = function sendEmail() {
-        window.location = "mailto:matthew.stafford.mayer@gmail.com";
+        window.location = "mailto:matthew@msm.codes";
     };
     return (
         <>
@@ -33,7 +33,7 @@ const ContactPage = () => {
                         <dt>Pronouns:</dt>
                         <dd>He/Him</dd>
                         <dt>Email:</dt>
-                        <dd>matt@msm.codes</dd>
+                        <dd>matthew@msm.codes</dd>
                         <dt>Phone:</dt>
                         <dd>(503) 360-8986</dd>
                         <dt>Preferred:</dt>
@@ -51,7 +51,7 @@ const ContactPage = () => {
                             onClick={() => sendMail()}
                         >
                             <i className="fa-regular fa-envelope large-text"></i>
-                            <p className="sans half-size-text">matthew.stafford.mayer@gmail.com</p>
+                            <p className="sans half-size-text">matthew@msm.codes</p>
                         </button>
                     </Col>
                 </Row>
