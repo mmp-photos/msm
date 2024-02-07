@@ -6,6 +6,8 @@
 /* PRIMARY IMAGES */
 import developer01 from '../images/portfolio/developer01.png';
 import developer02 from '../images/portfolio/developer02.png';
+import superheroMatch from '../images/portfolio/superheroMatch.png';
+import littleLemon from '../images/portfolio/littleLemon.png';
 import marketer02 from '../images/portfolio/marketing02.png';
 //import marketer01 from '../images/portfolio/marketing01.png';
 import content01 from '../images/portfolio/content01.png';
@@ -16,7 +18,6 @@ import smallGods03 from '../images/portfolio/smallGods03.png';
 import Fringe01    from '../images/portfolio/sirilicous.svg';
 import Fringe02    from '../images/portfolio/UnholyTrinity.png';
 import Fringe03    from '../images/portfolio/UnholyPoster.png';
-
 
 /* IMPORT ICONS FOR TECHNOLOGIES USED */
  import iconAdobePS    from '../images/logos/photoshop.svg';
@@ -138,6 +139,36 @@ export const PORTFOLIO = [
         status: 'Completed',
         description: 'Trying to express the essence of a fine cologne and entice others to purchase it',
         content: `<h2>Immortal Perfumes Gatsby</h2><h3>from their Dead Writers collection</h3><p>Notes: Lime, tobacco, vegan ambergris, tonka bean, juniper, white patchouli, champagne, grapefruit</p><p>Bright sunshine and fruit is an unexpected start to something that should be synonymous with nightlife.  Instead it's freshly laundered linen shirts and polo jerseys drying in the breeze of a West Egg morning.  The jazz age equivalent of brunch in the Hamptons.</p>The tobacco is a familiar element that provides depth and the type of intimacy only found at large parties.  Then as it wears on and winds down it changes.  Just as I'm certain often happened at Gatsby's house, the gin takes over. In the end leaving a lingering sense of a gentleman, impecably dressed with a light, clovey cigarette in one hand and a cut crystal tumbler in the other.<p>I'm very satisfied with the cologne.  It did arrive in a sample so small as to make magazine insert cards seem generous but it is something that I will certainly buy a small bottle of.  This may not be an everyday scent but for those occasions when it would be right - it would actually be perfect.</p>`
+    },
+    {
+        id: 6,
+        params: 'superHero',
+        title: 'SuperheroMatch',
+        workType: 'Developer',
+        url: 'https://superheromatch.onrender.com',
+        images: [superheroMatch],
+        artCredit: '',
+        tech: [ 
+              ],
+        role: 'Developer and Fan',
+        status: 'Completed',
+        description: 'A basic Javascript matching game using an existing API for interest',
+        content: ``
+    },
+    {
+        id: 7,
+        params: 'littleLemon',
+        title: 'Little Lemon Restaurant',
+        workType: 'Developer',
+        url: '',
+        images: [littleLemon],
+        artCredit: '',
+        tech: [ 
+              ],
+        role: 'Developer, Student',
+        status: 'Completed',
+        description: 'Capstone portfolio project for Meta\'s Front End Developer Professional Certification.',
+        content: ``
     }
 ];
 

@@ -11,7 +11,7 @@ const DisplayCard = () => {
     const portfolioItems = portfolioArray.map((item) => {
         return (
             <Link to={'/portfolio/' + item.id}>
-                <Col lg="4" key={ item.id } style={{display: "inline-block"}}>
+                <Col lg="4" key={ item.id } style={{display: "inline-block", backgroundColor: "green"}}>
                     <img className="portfolio-thumbs-image"
                         src={item.image}
                         alt={item.title}

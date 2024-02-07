@@ -7,6 +7,7 @@ import App from './App';
 import { store } from './assets/data/store'
 import 'font-awesome/css/font-awesome.css';
 import './assets/styles/msmStyles.css';
+import './assets/styles/portfolioStyles.css';
 
 
 const container = document.getElementById('root');

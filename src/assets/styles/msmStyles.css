@@ -397,6 +397,14 @@
       padding-top: 32px;
       border-radius: 30px
     }
+    .breadcrumbs{
+      margin-bottom: 52px;
+    }
+    .breadcrumb-brackets{
+      font-size: .8em;
+      margin: 6px;
+      color: var(--light-blue);
+    }
     .button-contact-box{
       justify-content: center;
       align-items: center;
