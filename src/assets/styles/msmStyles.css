@@ -38,6 +38,8 @@
     --header-height: 8em;
     --first-button-padding: .75em;
     --show-on-mobile: none;
+    --header-h1:32px 0px 0px 32px;
+
 
     /* TEXT AND HEADER SIZES */
     --h1-font-size: 4em;
@@ -96,6 +98,7 @@
     --header-height: 6em;
     --first-button-padding: 0px;
     --show-on-mobile: block;
+    --header-h1:opx 0px 0px 0px;
 
     /* SIZING VARIABLES */
     --profilePhoto: 120px;
@@ -258,11 +261,18 @@
         font-size: var(--h1-font-size);
         font-family: var(--serif-fonts);
         font-style: italic;
+        margin: var(--header-h1);
         background-image: linear-gradient(135deg, rgba(238,238,238,1) 0%,rgba(238,238,238,0.25) 100%);
     }
     header > * a {
         margin-left: 12px;
         margin-right: 12px;
+    }
+    .home-link {
+      color: black;
+    }
+    .home-link:hover {
+      color: black;
     }
 /* END HEADER STYLES */
 
@@ -360,7 +370,7 @@
     h3 {
         font-size: var(--h3-font-size);
         font-family: var(--sans-fonts);
-        margin-bottom: 3em;
+        /* margin-bottom: 3em; */
         line-height: var(--h3-font-size);
       }
     h4 {

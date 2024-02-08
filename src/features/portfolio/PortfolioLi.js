@@ -1,60 +1,33 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const PortfoliLi = (item) => {
-    const [ height, setHeight ] = useState('400px');
-    const [ isFirstLi, setisFirstLi ] = useState(false);
-    const ref = useRef(null);
-    const [ firstLoad, setFirstLoad ] = useState(true);
+    const [ infoUrl , setInfoUrl ] = useState();
 
-    ;
-
-    useEffect(() => {
-        setHeight(ref.current.clientHeight)
-        console.log(height)
-        setFirstLoad(false)
-        }, [firstLoad])
-    let angerGenerator = "angerGenerator";
     const handleHover = (e) => {
         const listItem = e.currentTarget;
-        const image = listItem.querySelector('img');
-        const heading = listItem.querySelector('h2');
-        const button = listItem.querySelector('button');
-        
-        listItem.style = 'maxHeight:'+ height + 'px';
-        image.style.transform = 'translateY(-35px)';
-        heading.style.transform = 'translateY(-35px)';
-        button.style.display = 'block';
-        button.style.transform = 'translateY(-35px)';
-
-    
-    }
+        const h2Header = listItem.querySelector('h2');
+        const buttons = listItem.querySelector('div');
+        const summary = listItem.querySelector('p');
+        buttons.style.opacity = '1';
+        summary.style.transform = 'translateY(0px)';
+    };
     const handleBlur = (e) => {
         const listItem = e.currentTarget;
-        const image = listItem.querySelector('img');
-        const heading = listItem.querySelector('h2');
-        const button = listItem.querySelector('button');
-    
-        image.style.transform = 'translateY(0px)';
-        heading.style.transform = 'translateY(0px)';
-        button.style.display = 'none';
-    
-    }
-    // const setRef = () => {
-    //     if(isFirstLi){
-    //         setisFirstLi(!isFirstLi)
-    //         return {liForHeight}
-    //     } else {
-    //         return null
-    //     }
-    // };
-
+        const h2Header = listItem.querySelector('h2');
+        const buttons = listItem.querySelector('div');
+        const summary = listItem.querySelector('p');
+        buttons.style.opacity = '0';
+        summary.style.transform = 'translateY(-24px)'
+    };
     const visitSite = (url) => {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
-
+    useEffect(() => {
+        setInfoUrl("portfolio/" + item.params);
+    }, [])
     const launchSite = (url) => {
-        console.log(url);
+        // console.log(url);
         if(!url){
             return null
         } else
@@ -64,17 +37,36 @@ const PortfoliLi = (item) => {
             </button>
         )
     };
+    let url = `/portfolio/${item.params}`;
+    function ButtonLink({ to, children }) {
+        let url = `/portfolio/${to}`;
+        return <Link to={url}><button>{children}</button></Link>;
+    }
 
     return (
-            <li ref={ref} key={item.id} style={{visibility: "visible"}} onMouseEnter={handleHover} onMouseLeave={handleBlur} >
-                <img style={{width: "200px"}} className="portfolio-thumbs-image"
+            <li key={item.id} onMouseEnter={handleHover} onMouseLeave={handleBlur}>
+                <a href={url}><img className="portfolio-thumbs-image"
                 src={item.images[0]}
                 alt={item.title} />
-                <h2 className="test-h2">{item.title}</h2>
-                {launchSite(item.url)}
-                <button style={{display: "none"}}>
-                    <Link to={"/portfolio/" + item.params}>More Info</Link>    
-                </button>
+                </a>
+                <h2 className="test-h2" style={{display: "block"}}>{item.title}</h2>
+                <div className="portfolio-buttons">
+                    <ButtonLink to={item.params}><i className="fa-solid fa-info"></i></ButtonLink>
+                    {item.url ? <button onClick={() => visitSite(item.url)}><i className="fa-solid fa-globe"></i>
+                                </button>
+                              : null}
+                    {item.github ? <button onClick={() => visitSite(item.github)}>
+                                   <i className="fa-brands fa-github"></i>
+                                   </button>
+                                 :null}
+                    {item.download ? <button>
+                                     <a href={item.download}>
+                                     <i className="fa-solid fa-arrow-down"></i></a>
+                                     </button>
+                                   : null}
+                    {/* {launchSite(item.url)} */}
+                </div>
+                <p>{item.summary}</p>
             </li>
     )
 };

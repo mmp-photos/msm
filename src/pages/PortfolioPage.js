@@ -58,7 +58,7 @@ const PortfolioPage = () => {
                     </Col>
                     <Col sm={12} md={6} className ="order-sm-2 order-md-1">
                         <article style={{paddingTop: "0px"}}>
-                            <p className="breadcrumbs"><a href="/">Home</a> <i class="fa-solid fa-chevron-right breadcrumb-brackets"></i> <a href="/work">Work</a> <i class="fa-solid fa-chevron-right breadcrumb-brackets"></i> <span style={{color: "#6d99f9"}}>{portfolioItem.title}</span></p>
+                            <p className="breadcrumbs"><a href="/">Home</a> <i className="fa-solid fa-chevron-right breadcrumb-brackets"></i> <a href="/work">Work</a> <i class="fa-solid fa-chevron-right breadcrumb-brackets"></i> <span style={{color: "#6d99f9"}}>{portfolioItem.title}</span></p>
                             <h2>{portfolioItem.title}</h2>
                             <dl style={{display: "grid"}}>
                                 <dt>Project Status:</dt>

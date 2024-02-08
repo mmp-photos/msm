@@ -1,6 +1,6 @@
 // IMPORTS //
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
     Navbar,
@@ -69,7 +69,9 @@ const Header = (props) => {
                     <Container>
                         <Row style={{width: "100%"}}>
                             <Col className="d-sm-9 d-md-6 d-flex justify-content-start">
-                                <h1>{pageTitle}</h1>
+                                <Link className="home-link" to={"/"}>
+                                    <h1>{pageTitle}</h1>
+                                </Link>
                             </Col>
                         </Row>
                     </Container>
