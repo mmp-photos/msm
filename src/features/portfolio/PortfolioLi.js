@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const PortfoliLi = (item) => {
-    const [ infoUrl , setInfoUrl ] = useState();
 
     const handleHover = (e) => {
         const listItem = e.currentTarget;
@@ -23,9 +22,6 @@ const PortfoliLi = (item) => {
     const visitSite = (url) => {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
-    useEffect(() => {
-        setInfoUrl("portfolio/" + item.params);
-    }, [])
     const launchSite = (url) => {
         // console.log(url);
         if(!url){

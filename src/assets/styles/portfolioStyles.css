@@ -20,15 +20,23 @@
     --dLeft-mRight: left;
     --start-to-center: start;
     --end-to-center: start;
+    --grid-3-1-columns: 1fr 1fr 1fr;
 
     /* SIZING VARIABLES */
     --profilePhoto: 200px;
     --contactPhoto: 200px;
     --interior-photo-scale: 75%;
     --mobile-100: 500px;
+    --mobile-full-screen: 80%
+}
+@media (max-width: 800px) {  /* MOBILE SITE VARIABLES */
+  :root{
+    --grid-3-1-columns: 1fr;
+    --mobile-full-screen: 100%
+  }
 }
  #portfolio{
-   width: 80%;
+   width: var(--mobile-full-screen);
    margin: auto;
  }
  #portfolio h2{
@@ -43,7 +51,7 @@
  }
  #portfolio ul {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-columns: var(--grid-3-1-columns);
    gap: 24px;
    list-style: none;
    margin-top: 2em;

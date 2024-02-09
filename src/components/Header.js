@@ -60,7 +60,7 @@ const Header = (props) => {
         const defineNav = (title) => {
             let pageTitle = title;
             if(pageTitle === 'noHeader'){
-                console.log('No header provided.');
+                // console.log('No header provided.');
             }
             else {
                 return(

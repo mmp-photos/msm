@@ -9,6 +9,12 @@ import swirlFaster from '../assets/images/mattHomepage_swirl_faster.png';
 import swirlProhibitor from '../assets/images/mattHomepageProhibitory.png';
 import { useState, useEffect, useRef } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+import Toolbox from '../assets/data/TOOLBOX.js';
+import ToolboxList from '../features/portfolio/ToolboxList';
+import PORTFOLIO from '../assets/data/PORTFOLIO.js';
+import PortfolioLi from '../features/portfolio/PortfolioLi';
+
 import bg01 from '../assets/images/backgrounds/bg01.jpg';
 import bg02 from '../assets/images/backgrounds/bg02.jpg';
 import bg03 from '../assets/images/backgrounds/bg03.jpg';
@@ -173,6 +179,25 @@ const HomePage = () => {
                     <button type="button" id="home-contact">
                         <Link to="/contact">Contact.</Link>
                     </button>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <section style={{paddingTop: "12px"}} id="spotlight">
+                        <h1 className="italic">Portfolio Spotlight</h1>
+                        <div id="portfolio">
+                            <ul>
+                                {PORTFOLIO.filter(item => item.featured === true)
+                                .map((item) => PortfolioLi(item))}
+                            </ul>
+                        </div>
+                    </section>
+                    <section style={{paddingTop: "32px"}} id="toolbox">
+                        <h1 className="italic">Toolbox &mdash; Some of my favorite technologies</h1>
+                        <ul>
+                            {Toolbox.map((tool) => ToolboxList(tool))}
+                        </ul>
+                    </section>
                 </Col>
             </Row>
             <div className="preload">

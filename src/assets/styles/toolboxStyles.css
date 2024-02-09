@@ -1,0 +1,67 @@
+:root {  
+    /* DEFINE FONTS FOR THE SITE */
+    --serif-fonts: 'Palatino','Times New Roman', Times, serif;
+    --sans-fonts: hypatia-sans-pro, sans-serif;
+
+    /* DEFINE COLORS FOR WEBSITE */
+    --background-color: #F0F1F4;
+    --yellow-highlight :#faf4b6;
+    --light-blue: #6d99f9;
+    --dark-blue: #43598a;
+    --white: white;
+    --black: black;
+
+    /****** DESKTOP SITE VARIABLES ******/
+    /* ALIGNMENT VARIABLES */
+    --align-right-to-center: 0 0 0 auto;
+    --mobile-inline-block: block;
+    --mobile-float-right: none;
+    --dRight-mCenter: right;
+    --dLeft-mRight: left;
+    --start-to-center: start;
+    --end-to-center: start;
+    --grid-3-1-columns: 1fr 1fr 1fr;
+
+    /* SIZING VARIABLES */
+    --profilePhoto: 200px;
+    --contactPhoto: 200px;
+    --interior-photo-scale: 75%;
+    --mobile-100: 500px;
+    --mobile-full-screen: 80%
+}
+@media (max-width: 800px) {  /* MOBILE SITE VARIABLES */
+  :root{
+    --grid-3-1-columns: 1fr;
+    --mobile-full-screen: 100%
+  }
+}
+
+#toolbox {
+    width: var(--mobile-full-screen);
+    margin: auto;
+}
+#toolbox ul {
+    list-style: none;
+    border: solid 1px var(--black);
+    padding: 24px;
+    margin: 16px;
+}
+#toolbox ul li {
+    position: relative;
+    display:inline-block;
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    object-fit: contain;
+    padding:12px;
+}
+.tooltip {
+  /* visibility: hidden; */
+  position: absolute;
+  z-index: 1;
+  background-color: var(--darkblue);
+  color: var(--yellow);
+}
+.tooltip:hover {
+  visibility: visible
+}
