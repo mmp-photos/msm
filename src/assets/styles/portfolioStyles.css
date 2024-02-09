@@ -98,3 +98,10 @@
   height: 35px;
   transition:visibility 0.5s linear,opacity 0.5s linear;
  }
+ #portfolio a:link{
+  color: var(--white);
+ }
+ #portfolio button:hover{
+  color: var(--white);
+ }
+ 
