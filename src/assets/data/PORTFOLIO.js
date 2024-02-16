@@ -7,7 +7,9 @@
 import developer01 from '../images/portfolio/developer01.png';
 import developer02 from '../images/portfolio/developer02.png';
 import superheroMatch from '../images/portfolio/superheroMatch.png';
-import littleLemon from '../images/portfolio/littleLemon.png';
+import superhero_match from '../images/portfolio/superhero_match.png';
+import littleLemon from '../images/portfolio/little_lemon.png';
+import dahlia_desire from '../images/portfolio/dahlia_desire.png';
 import marketer02 from '../images/portfolio/marketing02.png';
 //import marketer01 from '../images/portfolio/marketing01.png';
 import content01 from '../images/portfolio/content01.png';
@@ -62,6 +64,27 @@ export const PORTFOLIO = [
         status: 'Ongoing project: routinely updated.',
         description: `Website development to showcase the company's books and drive traffic to their products on Amazon`,
         content: `<p>Googly Press creates "Happy Little Books" and sells them through Amazon's Kindle Direct Publishing platform.</p><p>The company needs a central location to list their books and embed affilate links to help generate passive income.  My intention in creating the site was to keep the friendly feeling of the products and organize them in a way that makes them easy to find and purchase.</p>`,
+        featured: false
+    },
+    {
+        id: 8,
+        params: 'dahliadesire',
+        title: 'Dahlia Desire',
+        workType: 'Developer',
+        url: 'https://dahliadesire.onrender.com',
+        github: 'https://github.com/mmp-photos/DahliaDesire',
+        download: '',
+        images: [dahlia_desire],
+        artCredit: '',
+        tech: [ [iconReact, "React Javascript Framework"],
+                    [iconHTML, "HTML 5"],
+                    [iconCss3, "CSS 3"],
+                ],
+        summary: 'Website for Indianapolis burlesque and drag performer Dahlia Desire.',
+        role: 'Developer',
+        status: 'In progress',
+        description: 'Indianapolis\'s Dahlia Desire is a complex performer.  The self described "Afro-Latinx. They/them. Metal maiden. Eye fuc*er extraordinaire." needed a website that reflected all sides of them. It was important to me that the site reflect them not only in design but in structure.  The site loads the same code for both the "Daddy" and "Dahlia" options.  The look changes based on the presentation but all else remainse the same.',
+        content: ``,
         featured: true
     },
     {
@@ -125,7 +148,7 @@ export const PORTFOLIO = [
         status: 'Completed',
         description: 'Promote the shows in summer Theatre Festival',
         content: '<p>Working again with MK Productions as well as IndyFringe and the Indianapolis Arts Council I provided content and social media marketing for the 2021 Fringe Festival.</p><p>Primarily my efforts focused on the MK show <span className="italic">Small Gods - Big Problems</span>.  I did promote another show <span className="italic">Copyright Safe</span> by <a href="https://www.catalystrepertory.org/" target="new">Catalyst Repertory</a> using the Creature Double Feature content highlighting the similarities between the characters in the show and recommending it as a Friday Night double-bill.</p><p>The messaging video that I made to highlight the Covid-19 precautions that the festival was taking was shared across several official social media accounts.  When the local news came to promote the festival the organizers specifically requested that actors from our show be on camera to represent them.',
-        featured: true
+        featured: false
     },
     {
         id: 4,
@@ -173,7 +196,7 @@ export const PORTFOLIO = [
         url: 'https://superheromatch.onrender.com',
         github: 'https://github.com/mmp-photos/superheroMatch',
         download: '',
-        images: [superheroMatch],
+        images: [superhero_match, superheroMatch],
         artCredit: '',
         tech: [ 
               ],
@@ -182,7 +205,7 @@ export const PORTFOLIO = [
         status: 'Completed',
         description: 'A basic Javascript matching game using an existing API for interest',
         content: ``,
-        featured: false
+        featured: true
     },
     {
         id: 7,

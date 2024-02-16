@@ -61,10 +61,12 @@ const PortfolioPage = () => {
                             <p className="breadcrumbs"><a href="/">Home</a> <i className="fa-solid fa-chevron-right breadcrumb-brackets"></i> <a href="/work">Work</a> <i class="fa-solid fa-chevron-right breadcrumb-brackets"></i> <span style={{color: "#6d99f9"}}>{portfolioItem.title}</span></p>
                             <h2>{portfolioItem.title}</h2>
                             <dl style={{display: "grid"}}>
+                                <dt>Project Link:</dt>
+                                <dd><a href={portfolioItem.url}>{portfolioItem.url}</a></dd>
+                                <dt>Github Repository:</dt>
+                                <dd><a href={portfolioItem.github}>{portfolioItem.github}</a></dd>
                                 <dt>Project Status:</dt>
                                 <dd>{portfolioItem.status}</dd>
-                                <dt>Project Goals</dt>
-                                <dd>{portfolioItem.description}</dd>
                                 <dt>Role:</dt>
                                 <dd>{portfolioItem.role}</dd>
                                 <dt>Technologies used:</dt>
@@ -76,6 +78,8 @@ const PortfolioPage = () => {
                                                                                 </dd>
                                 <dt></dt>
                                 <dd style={{minHeight: "24px"}}><div className={refreshTools} ref={toolTip}></div></dd>
+                                <dt>Project Goals</dt>
+                                <dd>{portfolioItem.description}</dd>
                             </dl>
                             {parse('<div>' + portfolioItem.content + '</div>')}
                         </article>

@@ -191,6 +191,7 @@ const HomePage = () => {
                                 .map((item) => PortfolioLi(item))}
                             </ul>
                         </div>
+                        <a href="/work"><p style={{textAlign: "right", marginRight: "124px", paddingTop: "24px"}}>See the rest of my portfolio.</p></a>
                     </section>
                     <section style={{paddingTop: "32px"}} id="toolbox">
                         <h1 className="italic">Toolbox &mdash; Some of my favorite technologies</h1>
