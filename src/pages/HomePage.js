@@ -149,7 +149,7 @@ const HomePage = () => {
             <title>Matthew S Mayer</title>
         </Helmet>
         <main>
-            <Row>
+            <Row id="primary-content">
                 <Col sm={12} md={5} className ="d-sm-12 d-md-5 order-sm-1 order-md-2">
                     <div id={'home-media'} style={{height: calcMaxHeightAdjusted + 'px; overflow: hidden', backgroundSize: "contain", backgroundImage:`url(${bgPattern})`}} onClick = {() => setStop(stopStatus)}>
                         <div style={{height: calcMaxHeight + 'px; overflow: hidden'}}>
@@ -170,13 +170,13 @@ const HomePage = () => {
                     </div>
                 </Col>
                 <Col sm={12} md={5} className ="d-flex flex-column justify-content-center align-items-end order-sm-2 order-md-1">
-                    <button>
+                    <button className="hidden-button">
                         <Link to="/work">Work.</Link>
                     </button>
-                    <button>
+                    <button className="hidden-button">
                         <Link to="/about">About.</Link>
                     </button>
-                    <button type="button" id="home-contact">
+                    <button className="hidden-button" type="button" id="home-contact">
                         <Link to="/contact">Contact.</Link>
                     </button>
                 </Col>

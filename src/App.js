@@ -1,5 +1,3 @@
-// PRIMARY FILE FOR NUCAMP SITE CREATES THE SITE BY ARRANGING ALL COMPONENTS //
-
 // IMPORTS //
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
