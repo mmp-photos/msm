@@ -5,6 +5,7 @@ import { useState, useRef } from 'react';
 import PORTFOLIO from '../assets/data/PORTFOLIO.js';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import parse from 'html-react-parser';
+import '../assets/styles/portfolioStyles.css'
 
 const PortfolioPage = () => {
     const helmetContext = {};
@@ -40,13 +41,13 @@ const PortfolioPage = () => {
             <title>Aboout Me | Matthew Mayer</title>
         </Helmet>
             <main>
-            <Container>
+            <Container style={{maxWidth: "100%"}}>
                 <Row>
                     <Col sm={12} md={6} className ="order-sm-1 order-md-2">
                         <Row>
                             <Col>
                                 <div>
-                                    <img ref={primaryImage} className="portfolio" src={portfolioItem.images[0]} alt={portfolioItem.title} />
+                                    <img ref={primaryImage} style={{maxWidth: "100%"}} src={portfolioItem.images[0]} alt={portfolioItem.title} />
                                     <p className="modal-art-credit"> {portfolioItem.artCredit != null ? portfolioItem.artCredit : null} </p>
                                 </div>
                             </Col>
@@ -60,7 +61,7 @@ const PortfolioPage = () => {
                         <article style={{paddingTop: "0px"}}>
                             <p className="breadcrumbs"><a href="/">Home</a> <i className="fa-solid fa-chevron-right breadcrumb-brackets"></i> <a href="/work">Work</a> <i class="fa-solid fa-chevron-right breadcrumb-brackets"></i> <span style={{color: "#6d99f9"}}>{portfolioItem.title}</span></p>
                             <h2>{portfolioItem.title}</h2>
-                            <dl style={{display: "grid"}}>
+                            <dl>
                                 <dt>Project Link:</dt>
                                 <dd><a href={portfolioItem.url}>{portfolioItem.url}</a></dd>
                                 <dt>Github Repository:</dt>

@@ -32,7 +32,7 @@
 @media (max-width: 800px) {  /* MOBILE SITE VARIABLES */
   :root{
     --grid-3-1-columns: 1fr;
-    --mobile-full-screen: 100%
+    --mobile-full-screen: 9%
   }
 }
  #portfolio{
@@ -55,6 +55,8 @@
    gap: 24px;
    list-style: none;
    margin-top: 2em;
+   margin-left: -2em;
+   max-width: 95%;
  }
  #portfolio img {
     width: 100%;
@@ -104,4 +106,7 @@
  #portfolio button:hover{
   color: var(--white);
  }
- 
+ dd{
+  width: 85%;
+  overflow-wrap: break-word;
+ }

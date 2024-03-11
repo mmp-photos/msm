@@ -21,18 +21,24 @@
     --start-to-center: start;
     --end-to-center: start;
     --grid-3-1-columns: 1fr 1fr 1fr;
+    --toolbox-columns: 1fr 1fr 1fr 1fr 1fr;
+    --toolbox-image: 55%;
 
     /* SIZING VARIABLES */
     --profilePhoto: 200px;
     --contactPhoto: 200px;
+    --grid-width: 200px;
     --interior-photo-scale: 75%;
     --mobile-100: 500px;
     --mobile-full-screen: 80%
 }
-@media (max-width: 800px) {  /* MOBILE SITE VARIABLES */
+@media (max-width: 500px) {  /* MOBILE SITE VARIABLES */
   :root{
     --grid-3-1-columns: 1fr;
-    --mobile-full-screen: 100%
+    --mobile-full-screen: 100%;
+    --toolbox-columns: 1fr 1fr 1fr;
+    --toolbox-image: 100%;
+
   }
 }
 
@@ -41,6 +47,11 @@
     margin: auto;
 }
 #toolbox ul {
+    display: grid;
+    grid-template-columns: var(--toolbox-columns);
+    display: grid;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     border: solid 1px var(--black);
     padding: 24px;
@@ -48,12 +59,18 @@
 }
 #toolbox ul li {
     position: relative;
-    display:inline-block;
+    display: grid;
+    align-items: center;
+    justify-content: center;
     margin: auto;
-    width: 200px;
     text-align: center;
     object-fit: contain;
     padding:12px;
+}
+#toolbox ul li img {
+  width: var(--toolbox-image);
+  margin: auto;
+  margin-bottom: 12px;
 }
 .tooltip {
   /* visibility: hidden; */
