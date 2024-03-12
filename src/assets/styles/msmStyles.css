@@ -58,6 +58,10 @@
     --nav-text-top: 1.15em;
     --nav-display: block;
     --nav-margin-top: 20em;
+    --navX: 62px;
+    --navY: 32px;
+    --navFonts: hypatia-sans-pro, sans-serif;
+    --header-background: linear-gradient(180deg, var(--background-color) 80%, transparent);
 
     /* FOOTER VARIABLES */
     --footer-icons: 3em;
@@ -122,9 +126,13 @@
     --work-button-fonts: 1.25em;
 
     /* HEADER VARIABLES */
-    --nav-text-top: 1.24em;
+    --nav-text-top: 1.74em;
     --nav-display: block;
     --nav-margin-top: 20em;
+    --navX: 0px;
+    --navY: 0px;
+    --navFonts: 'Palatino','Times New Roman', Times, serif;
+    --header-background: linear-gradient(180deg, var(--background-color) 100%, transparent);
 
     /* FOOTER VARIABLES */
     --footer-icons: 1.5em;
@@ -210,8 +218,8 @@
 /***** NAVIGATION STYLES *****/
  .navbar-placement {
     position: fixed;
-    right: 0px;
-    top:32px;
+    right: var(--navX);
+    top: var(--navY);
     z-index: 3;
     display: block;
     background-color: var(--dark-blue);
@@ -220,8 +228,8 @@
     text-align: center;
     font-size: var(--nav-text-top);
     padding: .75em 1.75em;
-    font-family: var(--serif-fonts);
-    font-size: 1.7em;
+    font-family: var(--navFonts);
+    font-size: 1em;
  }
  .nav-item:hover {
     font-style: italic;
@@ -233,6 +241,9 @@
     padding: .2em 1.75em;
     color: var(--light-blue);
     font-size: 1.5em;
+ }
+ .shadow{
+  filter: drop-shadow(.15em .15em .5em black);
  }
  .toggler {
     display: var(--show-on-mobile);
@@ -260,7 +271,7 @@
         position: fixed;
         min-width: 100%;
         height: var(--header-height);
-        background-image: linear-gradient(180deg, var(--background-color) 70%, transparent);
+        background-image: var(--header-background);
         z-index: 2;
         padding-top: 12px;
         padding-left: 2em;
@@ -478,13 +489,9 @@
     #primary-content {
       transform: translateY(-45px);
     }
-    #shadow {
-      filter: drop-shadow(8px 8px 8px var(--dark-blue));
-    }
     nav{
         background-color: var(--background-color);
         font-size: var(--nav-text-top);
-        width: 300px;
     }
     .navbar-toggler {
         margin: 0 auto;

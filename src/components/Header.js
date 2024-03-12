@@ -19,6 +19,7 @@ const Header = (props) => {
   const [mobileOnly, setMobileOnly] = useState(false);
   const [pageTitle, setPageTitle] = useState();
   const [navRect, setNavRect] = useState(null);
+  const [shadow, setShadow] = useState(false);
   const clickHandledRef = useRef(false);
   
   useEffect(() => {
@@ -37,7 +38,10 @@ const Header = (props) => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-  }
+    if(mobileOnly){
+      setShadow(!shadow)
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -99,7 +103,7 @@ const Header = (props) => {
 
   return (
     <>
-      <header>
+      <header style={mobileOnly && pageTitle === 'noHeader' ? { backgroundImage: "none" } : null }>
         <Container>
           <Row style={{ width: "100%" }}>
             <Col className="d-sm-9 d-md-6 d-flex justify-content-start">
@@ -112,7 +116,7 @@ const Header = (props) => {
       </header>
       <Col className="navbar-placement d-sm-3 d-md-6 d-flex justify-content-center align-items-end">
         <i className="toggler fa-solid fa-angle-down" onClick={toggle}></i>
-        <div id="shadow" style={mobileOnly && isOpen ? { display: "block" } : { display: "none" }} ref={navRef} >
+        <div id="shadow" className={shadow ? "shadow" : null}  ref={navRef} >
         <ForwardedNavbar
           style={!mobileOnly && pageTitle === 'noHeader' ? { display: "none" } : { display: "block" }}
           expand="md">
