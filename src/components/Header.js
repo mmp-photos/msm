@@ -103,7 +103,7 @@ const Header = (props) => {
 
   return (
     <>
-      <header style={mobileOnly && pageTitle === 'noHeader' ? { backgroundImage: "none" } : null }>
+      <header style={!mobileOnly && pageTitle === 'noHeader' ? { backgroundImage: "none" } : null }>
         <Container>
           <Row style={{ width: "100%" }}>
             <Col className="d-sm-9 d-md-6 d-flex justify-content-start">
