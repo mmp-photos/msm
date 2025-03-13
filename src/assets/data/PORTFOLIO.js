@@ -92,7 +92,7 @@ export const PORTFOLIO = [
         params: 'angerGenerator',
         title: 'Geek Anger Generator',
         workType: 'Developer',
-        url: 'http://www.geekangergenerator.com',
+        url: 'https://geekangergenerator.onrender.com',
         github: 'http://www.google.com',
         download: '',
         images: [developer01],
